@@ -29,32 +29,31 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center mb-4">
-              <Image
-                src="/karvensen-logo.png"
-                alt="KarVenSen - Professional AI & Drone Services"
-                width={180}
-                height={50}
-                className="h-12 w-auto object-contain"
-              />
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2">
+                <div className="h-10 w-10 bg-primary rounded-lg flex items-center justify-center">
+                  <span className="text-primary-foreground font-bold text-xl">K</span>
+                </div>
+                <span className="text-2xl font-bold">Karvensen</span>
+              </div>
             </Link>
-            <p className="text-muted-foreground max-w-sm mb-6">
-              AI-first IT software services company specializing in Artificial Intelligence, Drone-based solutions, and
-              enterprise software.
+            <p className="text-muted-foreground max-w-sm mb-6 leading-relaxed">
+              Founded in 2023, pioneering AI software development, agricultural drone technology, and enterprise solutions 
+              across India. Make in India, powered by innovation.
             </p>
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-primary" />
-                <span>Hyderabad, India</span>
+                <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
+                <span>India</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-primary" />
+                <Mail className="h-4 w-4 text-primary flex-shrink-0" />
                 <a href="mailto:contact@karvensen.com" className="hover:text-primary transition-colors">
                   contact@karvensen.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-primary" />
+                <Phone className="h-4 w-4 text-primary flex-shrink-0" />
                 <a href="tel:+911234567890" className="hover:text-primary transition-colors">
                   +91 123 456 7890
                 </a>

@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { useState } from "react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
@@ -14,28 +13,48 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Moon, Sun, Cpu, Plane, BookOpen, Cloud, Code, GraduationCap } from "lucide-react"
+import { Menu, Moon, Sun, Cpu, Plane, BookOpen, Cloud, Server, GraduationCap } from "lucide-react"
 
 const services = [
   {
     title: "AI Software Development",
-    href: "/services#ai",
-    description: "Custom AI solutions for enterprise needs",
+    href: "/services#ai-software",
+    description: "Custom AI and machine learning solutions",
     icon: Cpu,
   },
   {
-    title: "Drone-Based Analytics",
-    href: "/services#drone",
-    description: "Intelligent drone monitoring systems",
+    title: "Drone Technology",
+    href: "/services#drone-technology",
+    description: "Agricultural drone systems for farmers",
     icon: Plane,
   },
-  { title: "LMS Solutions", href: "/services#lms", description: "Modern learning management systems", icon: BookOpen },
-  { title: "Cloud & DevOps", href: "/services#cloud", description: "Scalable cloud infrastructure", icon: Cloud },
-  { title: "Custom Software", href: "/services#custom", description: "Tailored software development", icon: Code },
+  { 
+    title: "LMS Solutions", 
+    href: "/services#lms", 
+    description: "Modern learning management systems", 
+    icon: BookOpen 
+  },
+  { 
+    title: "ERP Systems", 
+    href: "/services#erp", 
+    description: "Enterprise resource planning solutions", 
+    icon: Server 
+  },
+  { 
+    title: "Cloud Infrastructure", 
+    href: "/services#cloud", 
+    description: "Scalable cloud and DevOps solutions", 
+    icon: Cloud 
+  },
 ]
 
 const training = [
-  { title: "Farmer Programs", href: "/training#farmers", description: "Drone awareness for agriculture", icon: Plane },
+  { 
+    title: "Farmer Programs", 
+    href: "/training#farmers", 
+    description: "Drone awareness for agriculture", 
+    icon: Plane 
+  },
   {
     title: "School Workshops",
     href: "/training#schools",
@@ -43,9 +62,9 @@ const training = [
     icon: GraduationCap,
   },
   {
-    title: "Skill Development",
-    href: "/training#skills",
-    description: "Professional certification programs",
+    title: "Professional Training",
+    href: "/training#professional",
+    description: "Skill development programs",
     icon: BookOpen,
   },
 ]
@@ -57,15 +76,18 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/karvensen-logo.png"
-            alt="KarVenSen - Professional AI & Drone Services"
-            width={160}
-            height={45}
-            className="h-10 w-auto object-contain"
-            priority
-          />
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="flex items-center gap-2">
+            <div className="relative">
+              <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full"></div>
+              <div className="relative h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-lg">K</span>
+              </div>
+            </div>
+            <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">
+              Karvensen
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

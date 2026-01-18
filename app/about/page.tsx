@@ -1,97 +1,116 @@
 import type { Metadata } from "next"
 import { Card, CardContent } from "@/components/ui/card"
-import { Target, Eye, Award, Users, Globe, Lightbulb, Shield } from "lucide-react"
+import { Target, Eye, Award, Users, Plane, Lightbulb, Shield, TrendingUp } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "About Us | KarVenSen",
+  title: "About Us | Karvensen",
   description:
-    "Learn about KarVenSen's mission, vision, and values. Discover how we're revolutionizing industries with AI and drone technology.",
+    "Learn about Karvensen - Founded in 2023 by Karthika Venkatesan, pioneering AI software development, agricultural drone technology, and educational programs across India.",
 }
 
 const values = [
   {
     icon: Lightbulb,
-    title: "Innovation",
-    description: "Pushing boundaries with cutting-edge AI and drone technologies to solve complex challenges.",
+    title: "Innovation First",
+    description: "Pioneering AI and drone solutions that solve real-world challenges for farmers, businesses, and educational institutions.",
   },
   {
     icon: Shield,
-    title: "Integrity",
-    description: "Building trust through transparent practices, ethical AI, and responsible technology deployment.",
+    title: "Quality & Reliability",
+    description: "Enterprise-grade solutions with rigorous testing. Make in India quality with global standards.",
   },
   {
     icon: Users,
-    title: "Collaboration",
-    description: "Partnering with clients and communities to create impactful, sustainable solutions together.",
+    title: "Community Impact",
+    description: "Committed to empowering farmers and educating youth about emerging technologies through hands-on programs.",
   },
   {
     icon: Award,
     title: "Excellence",
-    description: "Delivering exceptional quality in every project, from AI models to training programs.",
+    description: "Delivering exceptional results in every project - from AI software to drone deployments and training workshops.",
   },
 ]
 
 const milestones = [
-  { year: "2019", event: "KarVenSen founded with a vision for AI-first solutions" },
-  { year: "2020", event: "Launched first drone analytics platform for agriculture" },
-  { year: "2021", event: "Expanded to LMS and ERP solutions" },
-  { year: "2022", event: "Started drone awareness programs across India" },
-  { year: "2023", event: "Reached 100+ enterprise clients milestone" },
-  { year: "2024", event: "Launched advanced AI/ML training programs" },
+  { year: "2023", event: "Karvensen founded by Karthika Venkatesan with a vision for AI-driven innovation" },
+  { year: "2023", event: "Launched agricultural drone technology program with Make in India initiative" },
+  { year: "2023", event: "Began educational workshops in schools and colleges across India" },
+  { year: "2024", event: "Expanded to LMS and ERP solutions for enterprise clients" },
+  { year: "2024", event: "Deployed 500+ drones for agricultural monitoring" },
+  { year: "2025", event: "Reached 100+ workshops conducted and 50+ enterprise clients" },
 ]
 
 const impactStats = [
-  { value: "500+", label: "Farmers Trained", icon: Users },
-  { value: "50+", label: "Schools Reached", icon: Globe },
-  { value: "200+", label: "Drone Pilots Certified", icon: Award },
-  { value: "30+", label: "Districts Covered", icon: Target },
+  { value: "500+", label: "Drones Deployed", icon: Plane },
+  { value: "100+", label: "Workshops Conducted", icon: Users },
+  { value: "50+", label: "Enterprise Clients", icon: Award },
+  { value: "1000+", label: "People Trained", icon: Target },
 ]
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-b from-primary/5 to-transparent">
+      <section className="relative py-24 border-b bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">
-              Pioneering <span className="text-primary">AI & Drone</span> Innovation
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border bg-card px-4 py-1.5 text-sm font-medium shadow-sm mb-6">
+              <TrendingUp className="h-4 w-4 text-primary" />
+              <span>Innovating Since 2023</span>
+            </div>
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
+              About <span className="text-primary">Karvensen</span>
             </h1>
-            <p className="text-lg text-muted-foreground text-pretty">
-              KarVenSen is an AI-first IT software services company dedicated to transforming industries through
-              intelligent technology. We bridge the gap between cutting-edge AI research and real-world applications.
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              Founded by <strong>Karthika Venkatesan</strong> in 2023, Karvensen is pioneering the future of AI software development, 
+              agricultural drone technology, and enterprise solutions. We're on a mission to make cutting-edge technology 
+              accessible and impactful across India.
             </p>
+            <div className="inline-flex items-center gap-6 flex-wrap justify-center text-sm">
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-primary" />
+                <span>Make in India</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-primary" />
+                <span>AI-First Approach</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-primary" />
+                <span>Community Focused</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24">
+      <section className="py-24 border-b">
         <div className="container mx-auto px-4">
-          <div className="grid gap-8 md:grid-cols-2">
-            <Card className="bg-card border-primary/20">
+          <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+            <Card className="border-2 hover:border-primary/50 transition-colors">
               <CardContent className="pt-8">
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                   <Target className="h-6 w-6 text-primary" />
                 </div>
                 <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  To democratize access to AI and drone technology by delivering innovative, scalable, and impactful
-                  solutions that empower businesses, farmers, and educational institutions. We aim to bridge the
-                  technology gap and drive digital transformation across sectors.
+                  To empower businesses, farmers, and educational institutions with AI-driven technology and drone solutions. 
+                  We're committed to building in India, creating local opportunities, and making advanced technology 
+                  accessible to those who need it most.
                 </p>
               </CardContent>
             </Card>
-            <Card className="bg-card border-primary/20">
+            <Card className="border-2 hover:border-primary/50 transition-colors">
               <CardContent className="pt-8">
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                   <Eye className="h-6 w-6 text-primary" />
                 </div>
                 <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  To be the leading AI-first technology partner for enterprises and communities, known for creating
-                  intelligent solutions that transform how people work, learn, and grow. We envision a future where AI
-                  and drones enhance human potential across every industry.
+                  To be India's leading technology partner, recognized for transforming agriculture through drones, 
+                  revolutionizing education with awareness programs, and delivering enterprise-grade AI solutions that 
+                  drive real business value and societal impact.
                 </p>
               </CardContent>
             </Card>
@@ -138,7 +157,7 @@ export default function AboutPage() {
 
               {milestones.map((milestone, index) => (
                 <div
-                  key={milestone.year}
+                  key={index}
                   className={`relative flex items-center gap-6 mb-8 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
                 >
                   <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : ""}`}>
