@@ -988,7 +988,9 @@ export default function AboutPage() {
             </div>
 
             {/* Award 2 - PMA Excellence Award */}
-            <div className="relative group overflow-hidden rounded-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
+            <div className={`relative group overflow-hidden rounded-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-1000 delay-600 ${
+              awardsRef.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+            }`}>
               <div className="aspect-video bg-gray-800 relative overflow-hidden">
                 <Image
                   src="/indian-woman-professional.png"
