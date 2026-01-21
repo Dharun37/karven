@@ -1,7 +1,7 @@
 # KARVENSEN WEBSITE - COMPLETE BUILD PROMPT
 
 ## 🎯 PROJECT OVERVIEW
-Build a professional corporate website for **Karvensen** - an IT company founded in 2023 by Karthika Venkatesan, specializing in AI software development, agricultural drone technology (Make in India initiative), enterprise solutions (LMS/ERP), and educational programs.
+Build a professional corporate website for **Karvensen** - an IT company founded in 2023 by Karthika Venkatesan, specializing in AI software development, agricultural drone technology (Make in India initiative), enterprise solutions (LMS platforms, cloud computing), and educational programs.
 
 ---
 
@@ -147,7 +147,7 @@ Build a professional corporate website for **Karvensen** - an IT company founded
      - Description: "Smart drone technology for farmers - crop monitoring, spraying, and analytics..."
   3. **LMS Solutions**
      - Icon: BookOpen
-     - Description: "Modern learning management systems for educational institutions..."
+     - Description: "Modern learning management systems for educational institutions and enterprises..."
   4. **Educational Programs**
      - Icon: GraduationCap
      - Description: "Hands-on workshops and awareness programs about drone technology..."
@@ -200,7 +200,7 @@ Build a professional corporate website for **Karvensen** - an IT company founded
 **A. Hero Section**
 - **Badge**: "Innovating Since 2023" with TrendingUp icon
 - **Heading**: "About Karvensen" (with animated text effect on desktop)
-- **Description**: "Founded by **Karthika Venkatesan** in 2023, Karvensen is pioneering the future of AI software development, agricultural drone technology, and enterprise solutions..."
+- **Description**: "Founded by **Karthika Venkatesan** in 2023, Karvensen is pioneering the future of AI software development, agricultural drone technology, cloud computing, and LMS platforms..."
 - **3 Status Indicators**: Innovation First, AI-First Approach, Community Focused (green pulse dots)
 
 **B. Mission & Vision**
@@ -225,7 +225,7 @@ Build a professional corporate website for **Karvensen** - an IT company founded
   - 2023: Company founded
   - 2023: Launched drone program
   - 2023: Started educational workshops
-  - 2024: Expanded to LMS/ERP
+  - 2024: Expanded to LMS & Cloud Solutions
   - 2024: Deployed 500+ drones
   - 2025: 100+ workshops, 50+ clients
 - **Design**: Vertical line with circular nodes, alternating left/right text
@@ -415,52 +415,412 @@ Each program has:
 **A. Hero Section**
 - **Badge**: "Insights & Updates" with BookOpen icon
 - **Heading**: "The Karvensen Blog"
-- **Description**: About insights on AI, drones, etc.
+- **Description**: "Explore deep insights, innovations, and real-world applications across AI, Drone Technology, Cloud Computing, LMS platforms, and next-generation digital solutions shaping the future."
+- **Hero Style**: Clean, modern, tech-focused with subtle animated background (AI circuit/drone map lines)
 
 **B. Category Filter**
-- **Horizontal pill buttons**:
-  - All, AI & Agriculture, Drone Technology, Enterprise Solutions, Innovation, Cloud & Security, Education
+- **Horizontal pill buttons** (Branch-based categories):
+  - All
+  - Artificial Intelligence
+  - Drone Technology
+  - Cloud Computing
+  - LMS & EdTech
+  - Innovation & Research
+  - Cybersecurity
+  - Data & Analytics
+  - Industry Use-Cases
 
-**C. Blog Grid** (3-column layout)
-**6 Sample Posts:**
+**C. Blog Grid** (3-column desktop, 2-column tablet, 1-column mobile)
+**50+ Comprehensive Blog Posts:**
 
-1. **How AI is Revolutionizing Agriculture in India**
-   - Category: AI & Agriculture
-   - Date: Jan 15, 2024
-   - Read Time: 5 min
-   - Excerpt: About AI and drone impact on farming...
+**🧠 ARTIFICIAL INTELLIGENCE (12 posts)**
 
-2. **The Rise of Drone Technology in Precision Farming**
-   - Category: Drone Technology
-   - Date: Jan 10, 2024
+1. **AI in Agriculture: Transforming India's Farming Landscape**
+   - Category: Artificial Intelligence
+   - Branch: AI in Agriculture
+   - Date: Jan 15, 2026
    - Read Time: 6 min
+   - Excerpt: Discover how AI-powered analytics, crop monitoring, and predictive models are revolutionizing agricultural productivity across Indian farms.
 
-3. **Building Drones in India: Quality Meets Innovation**
-   - Category: Innovation
-   - Date: Jan 5, 2024
-   - Read Time: 4 min
-
-4. **Digital Transformation: Why ERP and LMS Matter**
-   - Category: Enterprise Solutions
-   - Date: Dec 28, 2023
+2. **AI-Driven Healthcare: Early Disease Detection Systems**
+   - Category: Artificial Intelligence
+   - Branch: AI in Healthcare
+   - Date: Jan 12, 2026
    - Read Time: 7 min
+   - Excerpt: Explore how computer vision and machine learning enable rapid medical imaging analysis and predictive diagnostics in modern healthcare.
 
-5. **Cloud Security Best Practices**
-   - Category: Cloud & Security
-   - Date: Dec 20, 2023
-   - Read Time: 5 min
+3. **Computer Vision Applications: From Theory to Practice**
+   - Category: Artificial Intelligence
+   - Branch: Computer Vision
+   - Date: Jan 8, 2026
+   - Read Time: 8 min
+   - Excerpt: Deep dive into real-world computer vision implementations including object detection, facial recognition, and quality control systems.
 
-6. **Empowering Youth Through Technology Education**
-   - Category: Education
-   - Date: Dec 15, 2023
-   - Read Time: 4 min
+4. **Generative AI: The Future of Content Creation**
+   - Category: Artificial Intelligence
+   - Branch: Generative AI
+   - Date: Jan 5, 2026
+   - Read Time: 6 min
+   - Excerpt: Understanding how generative models are reshaping creative industries, from text to images and beyond.
 
-**Card Design**: Category badge at top, title, excerpt, date + read time at bottom
+5. **AI Model Training: Best Practices for Production Systems**
+   - Category: Artificial Intelligence
+   - Branch: AI Model Training
+   - Date: Dec 28, 2025
+   - Read Time: 9 min
+   - Excerpt: Comprehensive guide to training, validating, and deploying machine learning models at scale with optimal performance.
+
+6. **Intelligent Automation: AI-Powered Workflow Optimization**
+   - Category: Artificial Intelligence
+   - Branch: AI Automation
+   - Date: Dec 22, 2025
+   - Read Time: 7 min
+   - Excerpt: How businesses leverage AI to automate complex processes, reduce costs, and enhance operational efficiency.
+
+7. **Edge AI: Processing Intelligence at the Source**
+   - Category: Artificial Intelligence
+   - Branch: Edge AI
+   - Date: Dec 18, 2025
+   - Read Time: 6 min
+   - Excerpt: Exploring edge computing combined with AI for real-time decision making in IoT devices and embedded systems.
+
+8. **AI Ethics: Building Responsible AI Systems**
+   - Category: Artificial Intelligence
+   - Branch: AI Ethics
+   - Date: Dec 12, 2025
+   - Read Time: 8 min
+   - Excerpt: Navigate the ethical considerations, bias mitigation, and transparency requirements in modern AI development.
+
+9. **AI + IoT: The Smart Connected Future**
+   - Category: Artificial Intelligence
+   - Branch: AI + IoT
+   - Date: Dec 8, 2025
+   - Read Time: 7 min
+   - Excerpt: How artificial intelligence enhances IoT ecosystems for predictive maintenance, smart homes, and industrial automation.
+
+10. **AI for Smart Cities: Urban Intelligence Revolution**
+    - Category: Artificial Intelligence
+    - Branch: AI for Smart Cities
+    - Date: Dec 2, 2025
+    - Read Time: 7 min
+    - Excerpt: Transforming urban infrastructure with AI-driven traffic management, waste optimization, and energy efficiency systems.
+
+11. **Natural Language Processing: Human-AI Communication**
+    - Category: Artificial Intelligence
+    - Branch: NLP
+    - Date: Nov 25, 2025
+    - Read Time: 8 min
+    - Excerpt: Advanced NLP techniques powering chatbots, sentiment analysis, and language translation in enterprise applications.
+
+12. **AI-Powered Predictive Analytics for Business Intelligence**
+    - Category: Artificial Intelligence
+    - Branch: Predictive Analytics
+    - Date: Nov 20, 2025
+    - Read Time: 6 min
+    - Excerpt: Leverage AI-driven forecasting models to anticipate market trends, customer behavior, and business outcomes.
+
+**🚁 DRONE TECHNOLOGY (12 posts)**
+
+13. **Precision Farming Drones: Maximizing Crop Yields**
+    - Category: Drone Technology
+    - Branch: Precision Farming Drones
+    - Date: Jan 10, 2026
+    - Read Time: 7 min
+    - Excerpt: How agricultural drones equipped with multispectral sensors enable targeted interventions for optimal crop health.
+
+14. **Drone Surveillance & Terrain Mapping Technologies**
+    - Category: Drone Technology
+    - Branch: Surveillance & Mapping
+    - Date: Jan 6, 2026
+    - Read Time: 6 min
+    - Excerpt: Advanced aerial mapping solutions for infrastructure monitoring, land surveys, and disaster response operations.
+
+15. **Make in India: Drone Manufacturing Excellence**
+    - Category: Drone Technology
+    - Branch: Drone Manufacturing
+    - Date: Jan 3, 2026
+    - Read Time: 8 min
+    - Excerpt: Building world-class drones domestically—from design and component sourcing to quality assurance and certification.
+
+16. **UAV Regulations in India: Compliance & Certification**
+    - Category: Drone Technology
+    - Branch: UAV Regulations
+    - Date: Dec 30, 2025
+    - Read Time: 7 min
+    - Excerpt: Navigate DGCA guidelines, drone pilot licensing, and regulatory frameworks for commercial UAV operations.
+
+17. **Autonomous Drones: Self-Flying Intelligence**
+    - Category: Drone Technology
+    - Branch: Autonomous Drones
+    - Date: Dec 25, 2025
+    - Read Time: 8 min
+    - Excerpt: Cutting-edge autonomous navigation systems using AI, computer vision, and GPS-denied environment capabilities.
+
+18. **Drone Swarm Technology: Coordinated Aerial Intelligence**
+    - Category: Drone Technology
+    - Branch: Drone Swarm Technology
+    - Date: Dec 20, 2025
+    - Read Time: 9 min
+    - Excerpt: Multi-drone coordination algorithms enabling synchronized operations for search, rescue, and large-scale monitoring.
+
+19. **AI-Powered Drones: Next-Gen Aerial Analytics**
+    - Category: Drone Technology
+    - Branch: AI-Powered Drones
+    - Date: Dec 15, 2025
+    - Read Time: 7 min
+    - Excerpt: Integration of deep learning models for real-time object detection, tracking, and decision-making in flight.
+
+20. **Defense Applications: Drones in National Security**
+    - Category: Drone Technology
+    - Branch: Defense Applications
+    - Date: Dec 10, 2025
+    - Read Time: 6 min
+    - Excerpt: Tactical UAV deployment for border surveillance, reconnaissance, and strategic defense operations.
+
+21. **Delivery Drones: The Future of Logistics**
+    - Category: Drone Technology
+    - Branch: Delivery Drones
+    - Date: Dec 5, 2025
+    - Read Time: 7 min
+    - Excerpt: Revolutionizing last-mile delivery with autonomous aerial vehicles for e-commerce and emergency medical supplies.
+
+22. **Drone Maintenance & Repair: Ensuring Operational Excellence**
+    - Category: Drone Technology
+    - Branch: Drone Maintenance
+    - Date: Nov 28, 2025
+    - Read Time: 6 min
+    - Excerpt: Best practices for drone fleet management, preventive maintenance schedules, and troubleshooting common issues.
+
+23. **Thermal Imaging Drones: Beyond Visual Spectrum**
+    - Category: Drone Technology
+    - Branch: Thermal Imaging
+    - Date: Nov 22, 2025
+    - Read Time: 7 min
+    - Excerpt: Applications of thermal cameras in drones for wildlife monitoring, electrical inspections, and search operations.
+
+24. **Agricultural Spraying Drones: Precision Application Systems**
+    - Category: Drone Technology
+    - Branch: Agricultural Spraying
+    - Date: Nov 18, 2025
+    - Read Time: 6 min
+    - Excerpt: Optimizing pesticide and fertilizer distribution with GPS-guided drone sprayers for reduced waste and enhanced coverage.
+
+**☁️ CLOUD COMPUTING (13 posts)**
+
+25. **Cloud Architecture: Designing Scalable Systems**
+    - Category: Cloud Computing
+    - Branch: Cloud Architecture
+    - Date: Jan 14, 2026
+    - Read Time: 8 min
+    - Excerpt: Master the fundamentals of cloud infrastructure design, microservices architecture, and high-availability patterns.
+
+26. **Hybrid Cloud Strategies: Best of Both Worlds**
+    - Category: Cloud Computing
+    - Branch: Hybrid Cloud
+    - Date: Jan 11, 2026
+    - Read Time: 7 min
+    - Excerpt: Balancing on-premise and cloud resources for optimal performance, security, and cost efficiency.
+
+27. **Multi-Cloud Management: Avoiding Vendor Lock-In**
+    - Category: Cloud Computing
+    - Branch: Multi-Cloud Strategy
+    - Date: Jan 7, 2026
+    - Read Time: 7 min
+    - Excerpt: Strategies for managing workloads across AWS, Azure, and GCP while maintaining interoperability and resilience.
+
+28. **Cloud Migration: From On-Premise to Cloud-Native**
+    - Category: Cloud Computing
+    - Branch: Cloud Migration
+    - Date: Jan 4, 2026
+    - Read Time: 9 min
+    - Excerpt: Step-by-step guide to successful cloud migration including assessment, planning, execution, and optimization.
+
+29. **DevOps & CI/CD: Accelerating Cloud Deployments**
+    - Category: Cloud Computing
+    - Branch: DevOps & CI/CD
+    - Date: Dec 29, 2025
+    - Read Time: 8 min
+    - Excerpt: Implementing continuous integration and deployment pipelines for rapid, reliable cloud application releases.
+
+30. **Cloud AI Services: Machine Learning at Scale**
+    - Category: Cloud Computing
+    - Branch: Cloud AI Services
+    - Date: Dec 24, 2025
+    - Read Time: 7 min
+    - Excerpt: Leveraging cloud-native AI platforms for training, deploying, and scaling machine learning models efficiently.
+
+31. **Edge Cloud Computing: Distributed Intelligence**
+    - Category: Cloud Computing
+    - Branch: Edge Cloud
+    - Date: Dec 19, 2025
+    - Read Time: 6 min
+    - Excerpt: Bringing compute resources closer to data sources for ultra-low latency applications and IoT workloads.
+
+32. **Cloud Cost Optimization: Maximizing ROI**
+    - Category: Cloud Computing
+    - Branch: Cloud Cost Optimization
+    - Date: Dec 14, 2025
+    - Read Time: 8 min
+    - Excerpt: Proven techniques to reduce cloud spending through resource rightsizing, reserved instances, and automation.
+
+33. **Serverless Computing: Event-Driven Architecture**
+    - Category: Cloud Computing
+    - Branch: Serverless Computing
+    - Date: Dec 9, 2025
+    - Read Time: 7 min
+    - Excerpt: Build scalable applications without managing servers using AWS Lambda, Azure Functions, and similar platforms.
+
+34. **Cloud for Startups: Rapid Infrastructure Deployment**
+    - Category: Cloud Computing
+    - Branch: Cloud for Startups
+    - Date: Dec 4, 2025
+    - Read Time: 6 min
+    - Excerpt: How startups leverage cloud infrastructure for rapid prototyping, scaling, and cost-effective growth.
+
+35. **Cloud Security: Protecting Data in the Cloud**
+    - Category: Cloud Computing
+    - Branch: Cloud Security
+    - Date: Nov 30, 2025
+    - Read Time: 8 min
+    - Excerpt: Comprehensive security strategies including encryption, identity management, and compliance frameworks.
+
+36. **Kubernetes & Container Orchestration**
+    - Category: Cloud Computing
+    - Branch: Container Orchestration
+    - Date: Nov 26, 2025
+    - Read Time: 9 min
+    - Excerpt: Mastering Kubernetes for deploying, scaling, and managing containerized applications in production.
+
+37. **Cloud-Native Development: Building Modern Applications**
+    - Category: Cloud Computing
+    - Branch: Cloud-Native Development
+    - Date: Nov 21, 2025
+    - Read Time: 7 min
+    - Excerpt: Designing applications optimized for cloud environments with 12-factor principles and microservices patterns.
+
+**🎓 LMS & EDTECH (13 posts)**
+
+38. **AI-Based LMS: Personalized Learning Experiences**
+    - Category: LMS & EdTech
+    - Branch: AI-Based LMS
+    - Date: Jan 13, 2026
+    - Read Time: 7 min
+    - Excerpt: How AI algorithms adapt content delivery, recommend resources, and optimize learning paths for individual students.
+
+39. **Personalized Learning: Adaptive Education Platforms**
+    - Category: LMS & EdTech
+    - Branch: Personalized Learning
+    - Date: Jan 9, 2026
+    - Read Time: 6 min
+    - Excerpt: Tailoring educational content to learner pace, style, and proficiency using data-driven insights.
+
+40. **Virtual Labs: Hands-On Learning in Digital Spaces**
+    - Category: LMS & EdTech
+    - Branch: Virtual Labs
+    - Date: Jan 2, 2026
+    - Read Time: 7 min
+    - Excerpt: Simulated laboratory environments enabling students to conduct experiments remotely with realistic outcomes.
+
+41. **Skill Tracking Systems: Measuring Learning Outcomes**
+    - Category: LMS & EdTech
+    - Branch: Skill Tracking
+    - Date: Dec 27, 2025
+    - Read Time: 6 min
+    - Excerpt: Advanced analytics platforms for monitoring student progress, competency development, and knowledge retention.
+
+42. **Online Certification Platforms: Credentialing the Future**
+    - Category: LMS & EdTech
+    - Branch: Online Certification
+    - Date: Dec 23, 2025
+    - Read Time: 7 min
+    - Excerpt: Blockchain-verified certifications and digital badges for professional skills and academic achievements.
+
+43. **LMS Analytics: Data-Driven Education Insights**
+    - Category: LMS & EdTech
+    - Branch: LMS Analytics
+    - Date: Dec 17, 2025
+    - Read Time: 8 min
+    - Excerpt: Leveraging learning analytics dashboards to improve course design, engagement, and student success rates.
+
+44. **Gamification in LMS: Engagement Through Play**
+    - Category: LMS & EdTech
+    - Branch: Gamification
+    - Date: Dec 13, 2025
+    - Read Time: 6 min
+    - Excerpt: Incorporating game mechanics like points, badges, and leaderboards to boost motivation and participation.
+
+45. **Corporate Training Systems: Enterprise Learning Platforms**
+    - Category: LMS & EdTech
+    - Branch: Corporate Training
+    - Date: Dec 7, 2025
+    - Read Time: 7 min
+    - Excerpt: Scalable LMS solutions for employee onboarding, compliance training, and continuous professional development.
+
+46. **LMS for Educational Institutions: Campus-Wide Solutions**
+    - Category: LMS & EdTech
+    - Branch: LMS for Institutions
+    - Date: Dec 1, 2025
+    - Read Time: 8 min
+    - Excerpt: Comprehensive platforms managing courses, assessments, grading, and communication for schools and universities.
+
+47. **AR/VR in Education: Immersive Learning Technologies**
+    - Category: LMS & EdTech
+    - Branch: AR/VR in Education
+    - Date: Nov 27, 2025
+    - Read Time: 9 min
+    - Excerpt: Transforming education with augmented and virtual reality for interactive simulations and experiential learning.
+
+48. **Mobile Learning: Education On-The-Go**
+    - Category: LMS & EdTech
+    - Branch: Mobile Learning
+    - Date: Nov 23, 2025
+    - Read Time: 6 min
+    - Excerpt: Responsive LMS design and mobile-first strategies for learning anytime, anywhere on any device.
+
+49. **Collaborative Learning Platforms: Social Education**
+    - Category: LMS & EdTech
+    - Branch: Collaborative Learning
+    - Date: Nov 19, 2025
+    - Read Time: 7 min
+    - Excerpt: Peer-to-peer learning features including discussion forums, group projects, and real-time collaboration tools.
+
+50. **Learning Management API Integration: Ecosystem Connectivity**
+    - Category: LMS & EdTech
+    - Branch: LMS Integration
+    - Date: Nov 15, 2025
+    - Read Time: 8 min
+    - Excerpt: Integrating LMS platforms with existing enterprise systems, payment gateways, and third-party content providers.
+
+**Card Design**: 
+- Category badge at top (branch name)
+- Featured image (1200×630px)
+- Blog title (bold, clear)
+- Excerpt (2 lines max)
+- Date + Read time at bottom
+- Hover effect: lift + glow animation
 
 **🖼️ IMAGE PLACEMENT - Blog:**
 - **REQUIRED**: Each blog card needs:
-  - Featured image/thumbnail (hero image)
-  - Suggested: Relevant photos (drones, AI visuals, farm tech, students, etc.)
+  - Featured image/thumbnail (1200×630px)
+  - AI-generated or high-quality stock images
+  - Strictly related to blog branch topic
+
+**AI IMAGE GENERATION PROMPTS:**
+
+Template for each blog:
+```
+Ultra-realistic, high-resolution technology illustration of [BLOG BRANCH],
+modern Indian context, advanced AI systems, futuristic UI overlays,
+clean lighting, professional corporate style,
+cinematic composition, depth of field,
+no text, no watermark, 16:9 ratio, 1200x630
+```
+
+Examples:
+- **AI in Agriculture:** Drones scanning crops with AI dashboards overlay
+- **Cloud Computing:** Glowing cloud servers with data streams
+- **LMS Platform:** Virtual classroom with AI tutor hologram
+- **Drone Manufacturing:** High-tech assembly line with quality control systems
 
 ---
 
@@ -628,7 +988,7 @@ Each program has:
   3. **Services Links**:
      - AI Solutions
      - Drone Technology
-     - LMS & ERP
+     - LMS Solutions
      - Cloud Services
   
   4. **Training Links**:
@@ -677,14 +1037,24 @@ Each program has:
   type: 'document',
   fields: [
     { name: 'title', type: 'string', required },
-    { name: 'slug', type: 'slug' },
+    { name: 'slug', type: 'slug', required },
     { name: 'author', type: 'reference to author' },
-    { name: 'publishedAt', type: 'datetime' },
-    { name: 'category', type: 'array of references to category' },
-    { name: 'excerpt', type: 'text' },
-    { name: 'heroImage', type: 'image' },
-    { name: 'content', type: 'blockContent' },
-    { name: 'readTime', type: 'string' }
+    { name: 'publishedAt', type: 'datetime', required },
+    { name: 'category', type: 'string', required }, // Main category
+    { name: 'branch', type: 'string', required }, // Branch/subtitle
+    { name: 'excerpt', type: 'text', required, maxLength: 200 },
+    { name: 'heroImage', type: 'image', required },
+    { name: 'heroVideo', type: 'url' }, // AI-generated video URL
+    { name: 'content', type: 'blockContent', required },
+    { name: 'readTime', type: 'string' },
+    { name: 'tags', type: 'array of strings' },
+    { name: 'featured', type: 'boolean', default: false },
+    { name: 'relatedPosts', type: 'array of references to blogPost' },
+    { name: 'seo', type: 'object', fields: [
+      { name: 'metaTitle', type: 'string' },
+      { name: 'metaDescription', type: 'text' },
+      { name: 'keywords', type: 'array of strings' }
+    ]}
   ]
 }
 ```

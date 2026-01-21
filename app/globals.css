@@ -341,3 +341,178 @@
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
+/* Blog Section Premium Animations */
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* Premium Blog Micro-Interactions & Reading Experience */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth scroll behavior for reading experience */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced prose styles for blog content */
+.prose {
+  color: #374151;
+}
+
+.prose h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.prose ul {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose ul li {
+  margin-bottom: 0.75rem;
+  line-height: 1.75;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Premium link hover effect */
+.prose a {
+  color: #111827;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.prose a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+/* Blog Subtitle Animations - Scroll-triggered Slide-in */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animations with intersection observer classes */
+.prose h2,
+.prose h3,
+.prose p,
+.prose ul,
+.prose ol,
+.prose > div:not(.bg-gray-50):not(.bg-white):not(.grid),
+.prose section {
+  opacity: 0;
+  transition: none;
+}
+
+.prose h2.animate-slide-left,
+.prose h3.animate-slide-left,
+.prose p.animate-slide-left,
+.prose ul.animate-slide-left,
+.prose ol.animate-slide-left,
+.prose > div.animate-slide-left,
+.prose section.animate-slide-left {
+  animation: slideInLeft 0.7s ease-out forwards;
+  opacity: 1;
+}
+
+.prose h2.animate-slide-right,
+.prose h3.animate-slide-right,
+.prose p.animate-slide-right,
+.prose ul.animate-slide-right,
+.prose ol.animate-slide-right,
+.prose > div.animate-slide-right,
+.prose section.animate-slide-right {
+  animation: slideInRight 0.7s ease-out forwards;
+  opacity: 1;
+}
