@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import NotificationButton from "@/components/notification-button"
 import "./globals.css"
 
 const outfit = Outfit({ 
@@ -39,6 +40,7 @@ export default function RootLayout({
           <Navbar />
           <main className="min-h-screen bg-white dark:bg-gray-950">{children}</main>
           <Footer />
+          <NotificationButton />
         </ThemeProvider>
         <Analytics />
       </body>
