@@ -107,17 +107,17 @@ export default function TrainingPage() {
   const mediaItems = [
     {
       type: 'image',
-      src: '/training-image.png',
+      src: '/drone-flying-over-farm-field-at-sunset.jpg',
       caption: 'Setting the Benchmark as India\'s First Make-in-India Drone Company with Dual DGCA Certifications'
     },
     {
       type: 'image',
-      src: '/training-image2.png',
+      src: '/precision-agriculture-drone-mapping.jpg',
       caption: 'Hands-on Training Sessions with Agricultural Drones'
     },
     {
       type: 'image',
-      src: '/edu%20drone.png',
+      src: '/edu drone.png',
       caption: 'Educational Workshops for Students'
     },
     {
@@ -168,7 +168,7 @@ export default function TrainingPage() {
         {/* Background Image */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/training-image.png')" }}
+          style={{ backgroundImage: "url('/drone-flying-over-farm-field-at-sunset.jpg')" }}
         />
         
         {/* Dark Overlay */}
