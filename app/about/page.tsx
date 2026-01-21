@@ -119,8 +119,6 @@ export default function AboutPage() {
   const [playAnimation, setPlayAnimation] = useState(false)
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false)
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const heroRef = useInView()
   const purposeRef = useInView()
   const valuesRef = useInView()
@@ -128,8 +126,6 @@ export default function AboutPage() {
   const industriesRef = useInView()
   const galleryRef = useInView()
   const awardsRef = useInView()
-  const leadershipRef = useInView()
-  const boardRef = useInView()
   const videoSectionRef = useRef<HTMLElement>(null)
 
   // Gallery images array
@@ -184,127 +180,8 @@ export default function AboutPage() {
     setCurrentImageIndex(index)
   }
 
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here (e.g., send to API)
-    console.log('Form submitted:', formData)
-    alert('Thank you! We will get back to you soon.')
-    setIsContactFormOpen(false)
-    setFormData({ name: '', email: '', message: '' })
-  }
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
-
   return (
-    <div className="min-h-screen relative">
-      {/* Floating Send Message Button */}
-      <button
-        onClick={() => setIsContactFormOpen(true)}
-        className="fixed bottom-8 right-8 z-50 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 flex items-center gap-2 group"
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-        </svg>
-        <span>Send message</span>
-      </button>
-
-      {/* Contact Form Modal */}
-      {isContactFormOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-end">
-          {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-black/50"
-            onClick={() => setIsContactFormOpen(false)}
-          />
-          
-          {/* Modal Content */}
-          <div className="relative bg-red-600 text-white w-full max-w-md h-full shadow-2xl animate-slide-in-right flex flex-col">
-            {/* Close Button */}
-            <button
-              onClick={() => setIsContactFormOpen(false)}
-              className="absolute top-4 right-4 text-white hover:text-gray-200 transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            {/* Header */}
-            <div className="p-8 pb-6">
-              <h2 className="text-2xl font-bold mb-4">
-                Please fill out the form below and we will get back to you as soon as possible.
-              </h2>
-            </div>
-
-            {/* Form */}
-            <form onSubmit={handleFormSubmit} className="flex-1 px-8 pb-8 flex flex-col">
-              <div className="flex-1 space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="* Name"
-                    required
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-300"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="* Email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-300"
-                  />
-                </div>
-                <div>
-                  <textarea
-                    name="message"
-                    placeholder="* Message"
-                    required
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-300 resize-none"
-                  />
-                </div>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-3 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2 mt-6"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-                Submit
-              </button>
-
-              {/* Footer */}
-              <div className="mt-6 flex items-center justify-center gap-4 text-sm text-white/80">
-                <button type="button" className="hover:text-white transition-colors">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                  </svg>
-                </button>
-                <button type="button" className="hover:text-white transition-colors">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
-
+    <div className="min-h-screen">
       {/* Tagline Section */}
       <section className="relative py-12 bg-gradient-to-r from-gray-900 to-gray-800 text-white overflow-hidden">
         <div className="container mx-auto px-4 text-center">
@@ -1074,123 +951,68 @@ export default function AboutPage() {
               Awards and Recognitions: A Testament to Excellence
             </h2>
             <p className="text-gray-300 text-lg max-w-3xl">
-              KarVenSen proudly holds the title of a leading AI and Drone Technology Company. Our accolades include:
+              DroneAcharya proudly holds the title of India's 1st Listed Drone Company. Our accolades include:
             </p>
           </div>
 
-          {/* Awards Carousel */}
-          <div className="relative overflow-hidden max-w-6xl mx-auto">
-            <div className="animate-slide-awards flex gap-8">
-              {/* Award 1 - Asia Book of Records */}
-              <div className="relative group flex-shrink-0 w-full md:w-[calc(50%-1rem)] overflow-hidden rounded-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-                <div className="aspect-video bg-gray-800 relative overflow-hidden">
-                  <Image
-                    src="/indian-professional-man.png"
-                    alt="Asia Book of Records Recognition"
-                    fill
-                    className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
-                  
-                  {/* Award Badge */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs font-bold text-center">ASIA<br/>RECORD</span>
-                      </div>
-                      <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs font-bold text-center">INDIA<br/>RECORD</span>
-                      </div>
+          {/* Awards Grid */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Award 1 - Asia Book of Records */}
+            <div className={`relative group overflow-hidden rounded-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-1000 delay-400 ${
+              awardsRef.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+            }`}>
+              <div className="aspect-video bg-gray-800 relative overflow-hidden">
+                <Image
+                  src="/indian-professional-man.png"
+                  alt="Asia Book of Records Recognition"
+                  fill
+                  className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
+                
+                {/* Award Badge */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold text-center">ASIA<br/>RECORD</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-white">
-                      RECOGNITION BY THE ASIA BOOK OF RECORDS AND INDIA BOOK OF RECORDS
-                    </h3>
+                    <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold text-center">INDIA<br/>RECORD</span>
+                    </div>
                   </div>
+                  <h3 className="text-2xl font-bold text-white">
+                    RECOGNITION BY THE ASIA BOOK OF RECORDS AND INDIA BOOK OF RECORDS
+                  </h3>
                 </div>
               </div>
+            </div>
 
-              {/* Award 2 - PMA Excellence Award */}
-              <div className="relative group flex-shrink-0 w-full md:w-[calc(50%-1rem)] overflow-hidden rounded-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-                <div className="aspect-video bg-gray-800 relative overflow-hidden">
-                  <Image
-                    src="/indian-woman-professional.png"
-                    alt="PMA Excellence Award"
-                    fill
-                    className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
-                  
-                  {/* Award Badge */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="mb-4">
-                      <div className="inline-block bg-white px-4 py-2 rounded">
-                        <span className="text-gray-900 text-xl font-bold">PMA</span>
-                      </div>
+            {/* Award 2 - PMA Excellence Award */}
+            <div className={`relative group overflow-hidden rounded-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-1000 delay-600 ${
+              awardsRef.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+            }`}>
+              <div className="aspect-video bg-gray-800 relative overflow-hidden">
+                <Image
+                  src="/indian-woman-professional.png"
+                  alt="PMA Excellence Award"
+                  fill
+                  className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
+                
+                {/* Award Badge */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="mb-4">
+                    <div className="inline-block bg-white px-4 py-2 rounded">
+                      <span className="text-gray-900 text-xl font-bold">PMA</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-white">
-                      47th FOUNDATION DAY MANAGEMENT AWARD
-                    </h3>
-                    <p className="text-gray-300 mt-2">
-                      Pune Management Association Excellence Recognition
-                    </p>
                   </div>
-                </div>
-              </div>
-
-              {/* Duplicate cards for seamless loop */}
-              {/* Award 1 - Duplicate */}
-              <div className="relative group flex-shrink-0 w-full md:w-[calc(50%-1rem)] overflow-hidden rounded-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-                <div className="aspect-video bg-gray-800 relative overflow-hidden">
-                  <Image
-                    src="/indian-professional-man.png"
-                    alt="Asia Book of Records Recognition"
-                    fill
-                    className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
-                  
-                  {/* Award Badge */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs font-bold text-center">ASIA<br/>RECORD</span>
-                      </div>
-                      <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs font-bold text-center">INDIA<br/>RECORD</span>
-                      </div>
-                    </div>
-                    <h3 className="text-2xl font-bold text-white">
-                      RECOGNITION BY THE ASIA BOOK OF RECORDS AND INDIA BOOK OF RECORDS
-                    </h3>
-                  </div>
-                </div>
-              </div>
-
-              {/* Award 2 - Duplicate */}
-              <div className="relative group flex-shrink-0 w-full md:w-[calc(50%-1rem)] overflow-hidden rounded-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-                <div className="aspect-video bg-gray-800 relative overflow-hidden">
-                  <Image
-                    src="/indian-woman-professional.png"
-                    alt="PMA Excellence Award"
-                    fill
-                    className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
-                  
-                  {/* Award Badge */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="mb-4">
-                      <div className="inline-block bg-white px-4 py-2 rounded">
-                        <span className="text-gray-900 text-xl font-bold">PMA</span>
-                      </div>
-                    </div>
-                    <h3 className="text-2xl font-bold text-white">
-                      47th FOUNDATION DAY MANAGEMENT AWARD
-                    </h3>
-                    <p className="text-gray-300 mt-2">
-                      Pune Management Association Excellence Recognition
-                    </p>
-                  </div>
+                  <h3 className="text-2xl font-bold text-white">
+                    47th FOUNDATION DAY MANAGEMENT AWARD
+                  </h3>
+                  <p className="text-gray-300 mt-2">
+                    Pune Management Association Excellence Recognition
+                  </p>
                 </div>
               </div>
             </div>
@@ -1201,518 +1023,6 @@ export default function AboutPage() {
             <p className="text-gray-400 text-lg">
               These prestigious recognitions validate our commitment to innovation, excellence, and leadership in the drone technology sector.
             </p>
-          </div>
-        </div>
-      </section>
-      {/* Leadership Team Section */}
-      <section
-        ref={leadershipRef.ref}
-        className={`py-20 bg-white transition-all duration-1000 ${
-          leadershipRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
-      >
-        <div className="container mx-auto px-4">
-          {/* Header */}
-          <div className={`text-center mb-16 transition-all duration-1000 delay-200 ${
-            leadershipRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Leadership Team
-            </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Meet the visionary leaders driving innovation and excellence at KarVenSen
-            </p>
-          </div>
-
-          {/* Team Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-            {/* Leader 1 - Founder & CEO */}
-            <div className={`group text-center transition-all duration-1000 delay-300 ${
-              leadershipRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-500 to-red-600 p-1">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white p-1">
-                    <div className="relative w-full h-full rounded-full overflow-hidden">
-                      <Image
-                        src="/indian-professional-man.png"
-                        alt="Karthika Venkatesan - Founder & CEO"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Karthika Venkatesan</h3>
-              <p className="text-red-600 font-semibold mb-3">Founder & CEO</p>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
-                Visionary leader with expertise in AI, drone technology, and enterprise solutions. Driving KarVenSen's mission to revolutionize industries through innovation.
-              </p>
-            </div>
-
-            {/* Leader 2 - CTO */}
-            <div className={`group text-center transition-all duration-1000 delay-400 ${
-              leadershipRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-500 to-red-600 p-1">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white p-1">
-                    <div className="relative w-full h-full rounded-full overflow-hidden">
-                      <Image
-                        src="/indian-professor-man.jpg"
-                        alt="Chief Technology Officer"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Technology Head</h3>
-              <p className="text-red-600 font-semibold mb-3">Chief Technology Officer</p>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
-                Leading our technical innovation with deep expertise in AI, cloud computing, and drone systems integration.
-              </p>
-            </div>
-
-            {/* Leader 3 - Head of Operations */}
-            <div className={`group text-center transition-all duration-1000 delay-500 ${
-              leadershipRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-500 to-red-600 p-1">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white p-1">
-                    <div className="relative w-full h-full rounded-full overflow-hidden">
-                      <Image
-                        src="/indian-woman-professional.png"
-                        alt="Head of Operations"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Operations Lead</h3>
-              <p className="text-red-600 font-semibold mb-3">Head of Operations</p>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
-                Ensuring operational excellence and seamless delivery of our AI-powered solutions and drone services across all sectors.
-              </p>
-            </div>
-
-            {/* Leader 4 - Head of Product */}
-            <div className={`group text-center transition-all duration-1000 delay-600 ${
-              leadershipRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-500 to-red-600 p-1">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white p-1">
-                    <div className="relative w-full h-full rounded-full overflow-hidden">
-                      <Image
-                        src="/indian-professional-man.png"
-                        alt="Head of Product"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Product Director</h3>
-              <p className="text-red-600 font-semibold mb-3">Head of Product</p>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
-                Driving product strategy and innovation, ensuring our solutions meet market needs and exceed customer expectations.
-              </p>
-            </div>
-
-            {/* Leader 5 - Head of Marketing */}
-            <div className={`group text-center transition-all duration-1000 delay-700 ${
-              leadershipRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-500 to-red-600 p-1">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white p-1">
-                    <div className="relative w-full h-full rounded-full overflow-hidden">
-                      <Image
-                        src="/indian-woman-professional.png"
-                        alt="Head of Marketing"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Marketing Director</h3>
-              <p className="text-red-600 font-semibold mb-3">Head of Marketing</p>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
-                Leading brand strategy and market expansion, connecting our innovative solutions with businesses worldwide.
-              </p>
-            </div>
-
-            {/* Leader 6 - Head of Engineering */}
-            <div className={`group text-center transition-all duration-1000 delay-800 ${
-              leadershipRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-500 to-red-600 p-1">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white p-1">
-                    <div className="relative w-full h-full rounded-full overflow-hidden">
-                      <Image
-                        src="/indian-professor-man.jpg"
-                        alt="Head of Engineering"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Engineering Lead</h3>
-              <p className="text-red-600 font-semibold mb-3">Head of Engineering</p>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
-                Overseeing software development and system architecture, building scalable and robust technology solutions.
-              </p>
-            </div>
-
-            {/* Leader 7 - Head of Customer Success */}
-            <div className={`group text-center transition-all duration-1000 delay-900 ${
-              leadershipRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-500 to-red-600 p-1">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white p-1">
-                    <div className="relative w-full h-full rounded-full overflow-hidden">
-                      <Image
-                        src="/indian-woman-professional.png"
-                        alt="Head of Customer Success"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Customer Success Lead</h3>
-              <p className="text-red-600 font-semibold mb-3">Head of Customer Success</p>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
-                Ensuring client satisfaction and success through dedicated support and strategic partnership management.
-              </p>
-            </div>
-
-            {/* Leader 8 - Head of Sales */}
-            <div className={`group text-center transition-all duration-1000 delay-1000 ${
-              leadershipRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-500 to-red-600 p-1">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white p-1">
-                    <div className="relative w-full h-full rounded-full overflow-hidden">
-                      <Image
-                        src="/indian-professional-man.png"
-                        alt="Head of Sales"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Sales Director</h3>
-              <p className="text-red-600 font-semibold mb-3">Head of Sales</p>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
-                Driving revenue growth and building strategic partnerships across enterprise, government, and commercial sectors.
-              </p>
-            </div>
-
-            {/* Leader 9 - Head of Research & Development */}
-            <div className={`group text-center transition-all duration-1000 delay-1000 ${
-              leadershipRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-500 to-red-600 p-1">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white p-1">
-                    <div className="relative w-full h-full rounded-full overflow-hidden">
-                      <Image
-                        src="/indian-professor-man.jpg"
-                        alt="Head of Research & Development"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">R&D Director</h3>
-              <p className="text-red-600 font-semibold mb-3">Head of Research & Development</p>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
-                Leading cutting-edge research in AI, machine learning, and drone technology to drive next-generation innovations.
-              </p>
-            </div>
-          </div>
-
-          {/* Join Our Team CTA */}
-          <div className="mt-16 text-center">
-            <p className="text-gray-600 mb-6">
-              Want to be part of our innovative team?
-            </p>
-            <a
-              href="/careers"
-              className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300"
-            >
-              View Open Positions
-            </a>
-          </div>
-        </div>
-      </section>
-{/* Board of Directors Section */}
-<section
-  ref={boardRef.ref}
-  className={`py-20 bg-gray-50 transition-all duration-1000 ${
-    boardRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-  }`}
->
-  <div className="container mx-auto px-4">
-    {/* Header */}
-    <div className={`text-center mb-16 transition-all duration-1000 delay-200 ${
-      boardRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-    }`}>
-            <div className="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Catalysts of Vision
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Board of Directors
-            </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Our Board of Directors, the guiding force behind our trajectory, shaping the future of industrial drone innovation and driving unparalleled growth.
-            </p>
-          </div>
-
-          {/* Directors Grid */}
-          <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto mb-20">
-            {/* Director 1 */}
-            <div className={`group text-center transition-all duration-1000 delay-400 ${
-              boardRef.isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}>
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image
-                    src="/indian-professional-man.png"
-                    alt="Prateek Srivastava"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Prateek Srivastava</h3>
-              <p className="text-gray-600 mb-4">Founder & Managing Director</p>
-              <a 
-                href="#" 
-                className="inline-flex items-center justify-center w-10 h-10 bg-gray-900 hover:bg-red-600 text-white rounded transition-colors duration-300"
-                aria-label="LinkedIn Profile"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-            </div>
-
-            {/* Director 2 */}
-            <div className={`group text-center transition-all duration-1000 delay-600 ${
-              boardRef.isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}>
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image
-                    src="/indian-woman-professional.png"
-                    alt="Nikita Srivastava"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Nikita Srivastava</h3>
-              <p className="text-gray-600 mb-4">Director & CFO</p>
-              <a 
-                href="#" 
-                className="inline-flex items-center justify-center w-10 h-10 bg-gray-900 hover:bg-red-600 text-white rounded transition-colors duration-300"
-                aria-label="LinkedIn Profile"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-            </div>
-
-            {/* Director 3 */}
-            <div className={`group text-center transition-all duration-1000 delay-800 ${
-              boardRef.isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}>
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image
-                    src="/indian-professor-man.jpg"
-                    alt="Mangina Srinivas Rao"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Mangina Srinivas Rao</h3>
-              <p className="text-gray-600 mb-4">Independent Director</p>
-              <a 
-                href="#" 
-                className="inline-flex items-center justify-center w-10 h-10 bg-gray-900 hover:bg-red-600 text-white rounded transition-colors duration-300"
-                aria-label="LinkedIn Profile"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Join Us CTA */}
-          <div className={`bg-white rounded-2xl p-12 max-w-4xl mx-auto text-center shadow-lg transition-all duration-1000 delay-1000 ${
-            boardRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Join Us on the Journey: Explore, Learn, Soar
-            </h3>
-            <p className="text-gray-600 text-lg mb-8">
-              Explore the endless potential of drone technology, learn from the best in the field, and together, let's soar to new heights.
-            </p>
-            <a
-              href="/careers"
-              className="inline-flex items-center gap-2 bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold px-8 py-3 rounded-full transition-colors duration-300"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-              Join our team
-            </a>
-          </div>
-        </div>
-      </section>
-{/* Group Companies Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-block bg-gray-200 text-gray-700 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-              KarVenSen
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Group Companies
-            </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Collaborations & integrations to make our skies more accessible and the future generations more skillful.
-            </p>
-          </div>
-
-          {/* Companies Grid */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
-            {/* Company 1 - KarVenSen AI Solutions */}
-            <div className="group relative bg-gray-50 rounded-3xl p-8 hover:shadow-2xl transition-all duration-300">
-              <div className="flex flex-col md:flex-row gap-6 items-center">
-                <div className="flex-1">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                    KarVenSen AI Solutions
-                  </h3>
-                  <p className="text-gray-600 mb-6">
-                    Powering intelligent automation worldwide with cutting-edge AI and machine learning solutions.
-                  </p>
-                </div>
-                <div className="flex-shrink-0 w-full md:w-64 h-48 relative rounded-2xl overflow-hidden">
-                  <Image
-                    src="/enterprise-ai-dashboard.png"
-                    alt="KarVenSen AI Solutions"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Company 2 - KarVenSen Cloud Services */}
-            <div className="group relative bg-gray-50 rounded-3xl p-8 hover:shadow-2xl transition-all duration-300">
-              <div className="flex flex-col md:flex-row gap-6 items-center">
-                <div className="flex-1">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                    KarVenSen Cloud Services
-                  </h3>
-                  <p className="text-gray-600 mb-6">
-                    Enterprise cloud infrastructure, data analytics, and scalable solutions for modern businesses.
-                  </p>
-                  <a
-                    href="/services"
-                    className="inline-flex items-center gap-2 bg-gray-900 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
-                  >
-                    Visit Website
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-                <div className="flex-shrink-0 w-full md:w-64 h-48 relative rounded-2xl overflow-hidden">
-                  <Image
-                    src="/cloud-computing-infrastructure.png"
-                    alt="KarVenSen Cloud Services"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Service Cards */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {/* Service 1 */}
-            <a
-              href="/services"
-              className="group bg-gradient-to-br from-red-50 to-white border-2 border-red-100 rounded-2xl p-6 hover:shadow-xl hover:border-red-300 transition-all duration-300 cursor-pointer block"
-            >
-              <div className="flex items-center justify-between">
-                <h4 className="text-xl font-bold text-gray-900">
-                  Enterprise LMS Platform
-                </h4>
-                <svg className="w-6 h-6 text-red-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </a>
-
-            {/* Service 2 */}
-            <a
-              href="/services"
-              className="group bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:border-gray-400 transition-all duration-300 cursor-pointer block"
-            >
-              <div className="flex items-center justify-between">
-                <h4 className="text-xl font-bold text-gray-900">
-                  Custom Cloud Solutions
-                </h4>
-                <svg className="w-6 h-6 text-gray-900 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </a>
-
-            {/* Service 3 */}
-            <a
-              href="/training"
-              className="group bg-gradient-to-br from-red-50 to-white border-2 border-red-100 rounded-2xl p-6 hover:shadow-xl hover:border-red-300 transition-all duration-300 cursor-pointer block"
-            >
-              <div className="flex items-center justify-between">
-                <h4 className="text-xl font-bold text-gray-900">
-                  Drone Technology Training
-                </h4>
-                <svg className="w-6 h-6 text-red-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </a>
           </div>
         </div>
       </section>
@@ -1788,19 +1098,6 @@ export default function AboutPage() {
 
         .animate-scroll-x-fast {
           animation: scrollX 15s linear infinite;
-        }
-
-        .animate-slide-awards {
-          animation: slideAwards 20s linear infinite;
-        }
-
-        @keyframes slideAwards {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
         }
 
         .delay-100 {
