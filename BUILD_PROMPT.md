@@ -1,0 +1,1036 @@
+# KARVENSEN WEBSITE - COMPLETE BUILD PROMPT
+
+## 🎯 PROJECT OVERVIEW
+Build a professional corporate website for **Karvensen** - an IT company founded in 2023 by Karthika Venkatesan, specializing in AI software development, agricultural drone technology (Make in India initiative), enterprise solutions (LMS/ERP), and educational programs.
+
+---
+
+## 📦 TECH STACK
+
+### Core Technologies
+- **Framework**: Next.js 15+ with App Router (`app/` directory)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS with custom configuration
+- **UI Components**: shadcn/ui (Radix UI primitives)
+- **CMS**: Sanity.io with Sanity Studio
+- **Animations**: Framer Motion (optional) or CSS animations
+- **Forms**: react-hook-form + zod validation
+- **Package Manager**: pnpm (or npm)
+
+### Dependencies Required
+```json
+{
+  "dependencies": {
+    "next": "^15.x",
+    "react": "^18.x",
+    "react-dom": "^18.x",
+    "typescript": "^5.x",
+    "@sanity/client": "^6.x",
+    "@sanity/image-url": "^1.x",
+    "@sanity/vision": "^4.x",
+    "sanity": "^3.x",
+    "@radix-ui/react-*": "latest",
+    "class-variance-authority": "^0.7.x",
+    "clsx": "^2.x",
+    "tailwind-merge": "^2.x",
+    "lucide-react": "latest",
+    "react-hook-form": "^7.x",
+    "@hookform/resolvers": "^3.x",
+    "zod": "^3.x",
+    "date-fns": "^4.x"
+  }
+}
+```
+
+---
+
+## 🎨 DESIGN SYSTEM
+
+### Color Palette (Professional & Clean)
+- **Primary**: Gray-900 (`#111827`) - main text, CTAs
+- **Secondary**: Gray-700 (`#374151`) - secondary elements
+- **Accent**: Green-400 (`#4ADE80`) - hover states, highlights
+- **Background**: White (`#FFFFFF`) and Gray-50 (`#F9FAFB`)
+- **Borders**: Gray-200 (`#E5E7EB`)
+- **Text**: Gray-900 (headings), Gray-600 (body)
+
+### Typography
+- **Font Family**: System fonts (Inter recommended)
+- **Headings**: Bold, tracking-tight
+- **Body**: Regular weight, leading-relaxed
+
+### Design Principles
+- Clean, professional aesthetic (no excessive gradients)
+- Minimal but impactful animations
+- Neumorphic button effects (shadow on hover)
+- Responsive design (mobile-first)
+- Dark mode support (optional)
+
+---
+
+## 🏗️ PROJECT STRUCTURE
+
+```
+/
+├── app/
+│   ├── layout.tsx          # Root layout with providers
+│   ├── page.tsx            # Homepage
+│   ├── globals.css         # Global styles + Tailwind
+│   ├── about/page.tsx
+│   ├── services/page.tsx
+│   ├── training/page.tsx
+│   ├── blog/page.tsx
+│   ├── contact/page.tsx
+│   ├── careers/page.tsx
+│   └── studio/[[...tool]]/page.tsx  # Sanity Studio
+├── components/
+│   ├── navbar.tsx
+│   ├── footer.tsx
+│   ├── hero-section.tsx
+│   ├── features-section.tsx
+│   ├── why-choose-section.tsx
+│   ├── testimonials-section.tsx
+│   ├── cta-section.tsx
+│   └── ui/                 # shadcn/ui components
+├── sanity/
+│   ├── schemaTypes/
+│   │   ├── service.ts
+│   │   ├── blog.ts
+│   │   ├── author.ts
+│   │   ├── category.ts
+│   │   ├── training.ts
+│   │   ├── testimonial.ts
+│   │   ├── project.ts
+│   │   └── settings.ts
+│   ├── lib/
+│   │   ├── client.ts       # Sanity client config
+│   │   └── image.ts        # Image URL builder
+│   └── env.ts
+├── sanity.config.ts
+├── sanity.cli.ts
+├── tailwind.config.ts
+└── next.config.mjs
+```
+
+---
+
+## 📄 PAGE-BY-PAGE SPECIFICATIONS
+
+### 1. HOMEPAGE (`/`)
+
+#### Sections & Layout:
+
+**A. Hero Section**
+- **Background**: Subtle grid pattern with gradient (gray-50 to white)
+- **Headline**: "Transforming Industries with AI & Drone Technology"
+- **Subtext**: "Pioneering intelligent solutions in AI software, agricultural drones, enterprise systems, and cloud infrastructure. Built in India, powered by innovation."
+- **CTA Button**: "Explore Services" (links to `/services`)
+  - Style: Gray-900 background, hover: green-400 with shadow effect
+- **Key Highlights** (below CTA):
+  - 🟢 AI-Powered Solutions
+  - 🟢 Drone Technology for Farmers
+  - 🟢 Make in India Initiative
+- **Stats Cards** (4 columns):
+  - Founded: 2023
+  - Drones Deployed: 150+
+  - Workshops Conducted: 100+
+  - Enterprise Clients: 25+
+
+**B. Features/Services Section**
+- **Heading**: "Comprehensive Technology Solutions"
+- **4 Service Cards** (2x2 grid on desktop):
+  1. **AI Software Development** 
+     - Icon: Cpu (lucide-react)
+     - Description: "Custom AI solutions, machine learning models, and intelligent automation systems..."
+  2. **Agricultural Drone Systems**
+     - Icon: Plane
+     - Description: "Smart drone technology for farmers - crop monitoring, spraying, and analytics..."
+  3. **LMS Solutions**
+     - Icon: BookOpen
+     - Description: "Modern learning management systems for educational institutions..."
+  4. **Educational Programs**
+     - Icon: GraduationCap
+     - Description: "Hands-on workshops and awareness programs about drone technology..."
+- **Card Design**: White background, gray-200 border, hover: shadow-lg + translate-y-1
+
+**C. Why Choose Karvensen Section**
+- **Background**: Gray-50
+- **2-Column Layout**:
+  - **Left**: Text content
+    - Heading: "Why Choose Karvensen?"
+    - Description paragraph
+    - Checklist (6 items with checkmark icons):
+      - AI-first approach to problem solving
+      - Specialized in agricultural drone solutions
+      - Proven track record in enterprise systems
+      - Comprehensive training and support programs
+      - Cloud-native architecture expertise
+      - Commitment to indigenous manufacturing
+  - **Right**: 4 Value Cards (2x2 grid)
+    1. Founded on Innovation (Target icon)
+    2. Make in India (Zap icon)
+    3. Enterprise-Grade Quality (Shield icon)
+    4. Community Impact (Users icon)
+
+**D. Testimonials Section**
+- **Heading**: "Trusted by Organizations Nationwide"
+- **3 Testimonial Cards** (3-column grid):
+  1. **Rajesh Kumar** - Agricultural Enterprise Owner, Maharashtra
+     - Quote about drone technology increasing yield by 35%
+  2. **Dr. Priya Sharma** - Dean of Education Technology
+     - Quote about LMS platform transforming online education
+  3. **Prof. Venkat Rao** - Engineering College Principal
+     - Quote about exceptional drone workshop
+- **Card Design**: Quote icon at top-left, avatar + name at bottom
+
+**E. CTA Section**
+- **Background**: Gray-800 with grid pattern overlay
+- **Text**: White
+- **Heading**: "Ready to Innovate with Karvensen?"
+- **Buttons**: 
+  - Primary: "Schedule a Consultation" (white bg, gray-900 text)
+  - Secondary: "Explore Services" (outline)
+
+---
+
+### 2. ABOUT PAGE (`/about`)
+
+#### Sections:
+
+**A. Hero Section**
+- **Badge**: "Innovating Since 2023" with TrendingUp icon
+- **Heading**: "About Karvensen" (with animated text effect on desktop)
+- **Description**: "Founded by **Karthika Venkatesan** in 2023, Karvensen is pioneering the future of AI software development, agricultural drone technology, and enterprise solutions..."
+- **3 Status Indicators**: Innovation First, AI-First Approach, Community Focused (green pulse dots)
+
+**B. Mission & Vision**
+- **2-Column Grid**:
+  - **Mission Card** (Target icon)
+    - Title: "Our Mission"
+    - Text: "To empower businesses, farmers, and educational institutions with AI-driven technology..."
+  - **Vision Card** (Eye icon)
+    - Title: "Our Vision"
+    - Text: "To be India's leading technology partner..."
+
+**C. Core Values**
+- **Background**: Gray-50
+- **4 Value Cards** (2x2 grid):
+  1. Innovation First (Lightbulb icon)
+  2. Quality & Reliability (Shield icon)
+  3. Community Impact (Users icon)
+  4. Excellence (Award icon)
+
+**D. Journey Timeline**
+- **Vertical Timeline** (center-aligned on desktop):
+  - 2023: Company founded
+  - 2023: Launched drone program
+  - 2023: Started educational workshops
+  - 2024: Expanded to LMS/ERP
+  - 2024: Deployed 500+ drones
+  - 2025: 100+ workshops, 50+ clients
+- **Design**: Vertical line with circular nodes, alternating left/right text
+
+**E. Impact Stats**
+- **Background**: Gray-700 (dark)
+- **4 Stats** (horizontal grid):
+  - 150+ Drones Deployed (Plane icon)
+  - 100+ Workshops Conducted (Users icon)
+  - 25+ Enterprise Clients (Award icon)
+  - 1000+ People Trained (Target icon)
+
+**🖼️ IMAGE PLACEMENT - About Page:**
+- **NO images currently** - design is icon-based
+- **OPTIONAL**: Hero background image (team photo or office)
+- **OPTIONAL**: Founder photo next to mission/vision section
+
+---
+
+### 3. SERVICES PAGE (`/services`)
+
+#### Sections:
+
+**A. Hero Section**
+- **Heading**: "Our Services"
+- **Description**: "Comprehensive technology solutions spanning AI development, drone systems, enterprise software, and educational programs..."
+
+**B. Service Details** (4 major services)
+Each service has:
+- **2-Column Card Layout**:
+  - **Left Column** (Gray-50 background):
+    - Icon (large, 14x14, in gray-700 circle)
+    - Tagline badge
+    - Title (h2, 3xl)
+    - Description paragraph
+    - "Get Started" CTA button
+  - **Right Column** (White background):
+    - **Key Features** (checklist with CheckCircle icons)
+    - **Use Cases** (pill badges)
+
+**Services List:**
+
+1. **AI Software Development**
+   - Icon: Cpu
+   - Tagline: "Intelligent Solutions for Modern Challenges"
+   - Features (6):
+     - Custom Machine Learning Models
+     - Computer Vision & Image Processing
+     - Natural Language Processing (NLP)
+     - Predictive Analytics & Forecasting
+     - AI Integration & Deployment
+     - Model Training & Optimization
+   - Use Cases: Manufacturing Quality Control, Customer Behavior Analysis, Process Automation, Risk Assessment
+
+2. **Drone Technology**
+   - Icon: Plane
+   - Tagline: "Empowering Farmers with Smart Technology"
+   - Features (6):
+     - Crop Health Monitoring
+     - Precision Spraying Systems
+     - Real-time Field Analytics
+     - Multi-Spectral Imaging
+     - Automated Flight Planning
+     - Data-Driven Insights
+   - Use Cases: Pest Detection, Irrigation Planning, Yield Estimation, Field Mapping
+
+3. **Learning Management Systems**
+   - Icon: BookOpen
+   - Tagline: "Modern Education Platforms"
+   - Features (6):
+     - Course Management & Delivery
+     - Interactive Assessments
+     - Progress Tracking & Analytics
+     - Mobile-Responsive Design
+     - Integration with Existing Systems
+     - Certification Management
+   - Use Cases: Corporate Training, Academic Courses, Skill Development, Compliance Training
+
+4. **Educational Programs**
+   - Icon: GraduationCap
+   - Tagline: "Awareness & Skill Development"
+   - Features (6):
+     - Drone Awareness Workshops
+     - Practical Drone Operation Training
+     - AI & Technology Seminars
+     - Career Guidance Programs
+     - Hands-on Project Sessions
+     - Certification Courses
+   - Use Cases: School Workshops, College Programs, Farmer Training, Professional Development
+
+**C. CTA Section**
+- **Background**: Gray-700 with grid pattern
+- **Heading**: "Ready to Transform Your Business?"
+- **Button**: "Schedule a Consultation"
+
+**🖼️ IMAGE PLACEMENT - Services:**
+- **REQUIRED**: Each service card left column can have:
+  - AI Software: Code/neural network visualization
+  - Drone: Agricultural drone in field
+  - LMS: Students using platform
+  - Training: Workshop/classroom photo
+
+---
+
+### 4. TRAINING PAGE (`/training`)
+
+#### Sections:
+
+**A. Hero Section**
+- **Badge**: "Training Programs"
+- **Heading**: "Drone Awareness & Technical Training"
+- **Description**: About empowering communities
+
+**B. Stats Bar** (4 stats horizontal):
+- 500+ Farmers Trained
+- 50+ Schools Reached
+- 200+ Certified Professionals
+- 30+ Districts Covered
+
+**C. Training Programs** (3 programs)
+Each program has:
+- **2-Column Layout**:
+  - **Visual Column**: Large icon centered with duration/format badges
+  - **Details Column**: 
+    - Title
+    - Description
+    - What You'll Learn (checklist)
+    - Meta info (certification, audience)
+    - "Enroll Now" button
+
+**Programs:**
+
+1. **Farmer Drone Awareness Programs**
+   - Icon: Tractor
+   - Duration: 2-3 Days
+   - Format: On-site / Field Training
+   - Features (6):
+     - Introduction to agricultural drones
+     - Crop health monitoring basics
+     - Precision spraying techniques
+     - Data interpretation
+     - Government schemes
+     - Hands-on operation
+   - Audience: Farmers, Agricultural Officers
+
+2. **School & College Workshops**
+   - Icon: GraduationCap
+   - Duration: 1-5 Days
+   - Format: On-campus Workshops
+   - Features (6):
+     - Intro to AI/ML
+     - Drone basics
+     - Hands-on coding
+     - Project-based learning
+     - Career guidance
+     - Interactive demos
+   - Audience: Students (Class 8-12), College, Teachers
+
+3. **Skill Development & Certification**
+   - Icon: Award
+   - Duration: 4-12 Weeks
+   - Format: Hybrid (Online + Practical)
+   - Features (6):
+     - DGCA drone pilot prep
+     - AI/ML fundamentals
+     - Cloud computing
+     - Enterprise software dev
+     - Project management
+     - Placement assistance
+   - Audience: Professionals, Graduates
+
+**D. FAQ Section** (Accordion)
+5 FAQs about eligibility, certification, location, cost, financial assistance
+
+**🖼️ IMAGE PLACEMENT - Training:**
+- **REQUIRED**:
+  - Farmer program: Farmers with drones in field
+  - School program: Students in workshop
+  - Professional: Certification/training session photo
+
+---
+
+### 5. BLOG PAGE (`/blog`)
+
+#### Sections:
+
+**A. Hero Section**
+- **Badge**: "Insights & Updates" with BookOpen icon
+- **Heading**: "The Karvensen Blog"
+- **Description**: About insights on AI, drones, etc.
+
+**B. Category Filter**
+- **Horizontal pill buttons**:
+  - All, AI & Agriculture, Drone Technology, Enterprise Solutions, Innovation, Cloud & Security, Education
+
+**C. Blog Grid** (3-column layout)
+**6 Sample Posts:**
+
+1. **How AI is Revolutionizing Agriculture in India**
+   - Category: AI & Agriculture
+   - Date: Jan 15, 2024
+   - Read Time: 5 min
+   - Excerpt: About AI and drone impact on farming...
+
+2. **The Rise of Drone Technology in Precision Farming**
+   - Category: Drone Technology
+   - Date: Jan 10, 2024
+   - Read Time: 6 min
+
+3. **Building Drones in India: Quality Meets Innovation**
+   - Category: Innovation
+   - Date: Jan 5, 2024
+   - Read Time: 4 min
+
+4. **Digital Transformation: Why ERP and LMS Matter**
+   - Category: Enterprise Solutions
+   - Date: Dec 28, 2023
+   - Read Time: 7 min
+
+5. **Cloud Security Best Practices**
+   - Category: Cloud & Security
+   - Date: Dec 20, 2023
+   - Read Time: 5 min
+
+6. **Empowering Youth Through Technology Education**
+   - Category: Education
+   - Date: Dec 15, 2023
+   - Read Time: 4 min
+
+**Card Design**: Category badge at top, title, excerpt, date + read time at bottom
+
+**🖼️ IMAGE PLACEMENT - Blog:**
+- **REQUIRED**: Each blog card needs:
+  - Featured image/thumbnail (hero image)
+  - Suggested: Relevant photos (drones, AI visuals, farm tech, students, etc.)
+
+---
+
+### 6. CONTACT PAGE (`/contact`)
+
+#### Sections:
+
+**A. Hero Section**
+- **Heading**: "Get in Touch"
+- **Description**: About services, training, partnerships
+
+**B. Main Content** (2-column layout)
+
+**Left Column - Contact Form:**
+- Fields:
+  - First Name (required)
+  - Last Name (required)
+  - Email (required, type=email)
+  - Phone (optional, type=tel)
+  - Inquiry Type (dropdown): General, Book Demo, Partnership, Training, Careers, Support
+  - Company (optional)
+  - Message (textarea, required)
+- **Submit Button**: "Send Message" with Send icon
+  - Style: Gray-900 bg, hover: green-400 with shadow effect
+- **Success State**: Shows checkmark + thank you message
+
+**Right Column - Contact Information Cards:**
+4 cards with hover effects:
+
+1. **Office Address**
+   - Icon: MapPin
+   - Text: 
+     - KarVenSen Technologies
+     - Hitech City, Hyderabad
+     - Telangana 500081, India
+
+2. **Email Us**
+   - Icon: Mail
+   - Links:
+     - contact@karvensen.com
+     - sales@karvensen.com
+     - careers@karvensen.com
+
+3. **Call Us**
+   - Icon: Phone
+   - Numbers:
+     - +91 123 456 7890
+     - +91 987 654 3210
+
+4. **Business Hours**
+   - Icon: Clock
+   - Schedule:
+     - Monday - Friday: 9:00 AM - 6:00 PM
+     - Saturday: 10:00 AM - 2:00 PM
+     - Sunday: Closed
+
+**🖼️ IMAGE PLACEMENT - Contact:**
+- **OPTIONAL**: Map embed or office photo
+
+---
+
+### 7. CAREERS PAGE (`/careers`)
+
+#### Sections:
+
+**A. Hero Section**
+- **Badge**: "We're Hiring" (green-400 bg)
+- **Heading**: "Build the Future with KarVenSen"
+- **Description**: About joining innovators
+
+**B. Benefits Section** (Gray-50 background)
+- **4 Benefit Cards** (4-column grid):
+  1. Growth Opportunities (TrendingUp icon)
+  2. Cutting-Edge Tech (Zap icon)
+  3. Health & Wellness (Heart icon)
+  4. Collaborative Culture (Users icon)
+
+**C. Open Positions** (vertical list)
+**6 Job Listings:**
+
+1. **AI/ML Engineer**
+   - Department: AI Research
+   - Location: Hyderabad
+   - Type: Full-time
+   - Experience: 3-5 years
+   - Requirements (4 bullet points)
+   - "View Details" button
+
+2. **Drone Systems Engineer**
+   - Department: Drone Technology
+   - Location: Hyderabad
+   - Type: Full-time
+   - Experience: 2-4 years
+
+3. **Full Stack Developer**
+   - Department: Product Engineering
+   - Location: Hyderabad / Remote
+   - Type: Full-time
+   - Experience: 2-4 years
+
+4. **DevOps Engineer**
+   - Department: Infrastructure
+   - Location: Hyderabad
+   - Type: Full-time
+   - Experience: 3-5 years
+
+5. **Training Program Coordinator**
+   - Department: Training & Outreach
+   - Location: Hyderabad / Field
+   - Type: Full-time
+   - Experience: 2-3 years
+
+6. **Enterprise Sales Executive**
+   - Department: Business Development
+   - Location: Hyderabad / Delhi
+   - Type: Full-time
+   - Experience: 3-5 years
+
+**Job Card Design**: White bg, gray-200 border, hover: shadow-lg, shows department, location, type, experience badge
+
+**D. Application CTA Section**
+- Background: Gray-700
+- "Don't see a perfect fit?" message
+- "Send us your resume" button
+
+**🖼️ IMAGE PLACEMENT - Careers:**
+- **OPTIONAL**: Team photo, office culture images
+
+---
+
+## 🧩 SHARED COMPONENTS
+
+### NAVBAR (Sticky Top)
+- **Logo**: "K" in gray-700 square + "Karvensen" text
+- **Desktop Menu**:
+  - Home (link)
+  - Services (dropdown with 5 services)
+  - Training (dropdown with 3 programs)
+  - About
+  - Blog
+  - Contact
+- **CTA Button**: "Get Started" (gray-900 bg)
+- **Mobile**: Hamburger menu (Sheet component)
+- **Sticky**: Yes, backdrop-blur effect
+
+### FOOTER
+- **5-Column Grid** (responsive):
+  1. **Brand Column** (spans 2 cols):
+     - Logo + name
+     - Description text
+     - Contact info (MapPin, Mail, Phone with icons)
+     - **Social Media Icons** (5 icons with brand colors):
+       - LinkedIn (#0077b5)
+       - YouTube (#CD201F)
+       - Facebook (#316FF6)
+       - Twitter (#1DA1F2)
+       - Instagram (gradient)
+  
+  2. **Company Links**:
+     - About Us
+     - Careers
+     - Blog
+     - Contact
+  
+  3. **Services Links**:
+     - AI Solutions
+     - Drone Technology
+     - LMS & ERP
+     - Cloud Services
+  
+  4. **Training Links**:
+     - Farmer Programs
+     - School Workshops
+     - Skill Development
+
+  5. **Resources** (optional):
+     - Documentation
+     - Case Studies
+     - Privacy Policy
+     - Terms of Service
+
+- **Bottom Bar**: Copyright text
+
+**🎨 Footer Design**: Gray-50 background, gray-200 border-top
+
+---
+
+## 🗄️ SANITY CMS SCHEMAS
+
+### 1. Service Schema
+```typescript
+{
+  name: 'service',
+  type: 'document',
+  fields: [
+    { name: 'title', type: 'string', required },
+    { name: 'slug', type: 'slug' },
+    { name: 'icon', type: 'string' }, // lucide icon name
+    { name: 'tagline', type: 'string' },
+    { name: 'shortDescription', type: 'text' },
+    { name: 'longDescription', type: 'blockContent' },
+    { name: 'features', type: 'array of strings' },
+    { name: 'useCases', type: 'array of strings' },
+    { name: 'images', type: 'array of images' },
+    { name: 'order', type: 'number' }
+  ]
+}
+```
+
+### 2. Blog Post Schema
+```typescript
+{
+  name: 'blogPost',
+  type: 'document',
+  fields: [
+    { name: 'title', type: 'string', required },
+    { name: 'slug', type: 'slug' },
+    { name: 'author', type: 'reference to author' },
+    { name: 'publishedAt', type: 'datetime' },
+    { name: 'category', type: 'array of references to category' },
+    { name: 'excerpt', type: 'text' },
+    { name: 'heroImage', type: 'image' },
+    { name: 'content', type: 'blockContent' },
+    { name: 'readTime', type: 'string' }
+  ]
+}
+```
+
+### 3. Author Schema
+```typescript
+{
+  name: 'author',
+  fields: [
+    { name: 'name', type: 'string' },
+    { name: 'role', type: 'string' },
+    { name: 'avatar', type: 'image' },
+    { name: 'bio', type: 'text' }
+  ]
+}
+```
+
+### 4. Category Schema
+```typescript
+{
+  name: 'category',
+  fields: [
+    { name: 'title', type: 'string' },
+    { name: 'slug', type: 'slug' },
+    { name: 'description', type: 'text' }
+  ]
+}
+```
+
+### 5. Training Program Schema
+```typescript
+{
+  name: 'training',
+  fields: [
+    { name: 'title', type: 'string' },
+    { name: 'slug', type: 'slug' },
+    { name: 'icon', type: 'string' },
+    { name: 'duration', type: 'string' },
+    { name: 'format', type: 'string' },
+    { name: 'description', type: 'text' },
+    { name: 'features', type: 'array of strings' },
+    { name: 'audience', type: 'string' },
+    { name: 'certification', type: 'string' },
+    { name: 'price', type: 'number' },
+    { name: 'images', type: 'array of images' }
+  ]
+}
+```
+
+### 6. Testimonial Schema
+```typescript
+{
+  name: 'testimonial',
+  fields: [
+    { name: 'quote', type: 'text' },
+    { name: 'author', type: 'string' },
+    { name: 'role', type: 'string' },
+    { name: 'avatar', type: 'image' },
+    { name: 'company', type: 'string' },
+    { name: 'featured', type: 'boolean' }
+  ]
+}
+```
+
+### 7. Project/Case Study Schema
+```typescript
+{
+  name: 'project',
+  fields: [
+    { name: 'title', type: 'string' },
+    { name: 'slug', type: 'slug' },
+    { name: 'client', type: 'string' },
+    { name: 'industry', type: 'string' },
+    { name: 'description', type: 'blockContent' },
+    { name: 'images', type: 'array of images' },
+    { name: 'results', type: 'array of objects' },
+    { name: 'technologies', type: 'array of strings' }
+  ]
+}
+```
+
+### 8. Settings Schema
+```typescript
+{
+  name: 'settings',
+  type: 'document',
+  fields: [
+    { name: 'siteTitle', type: 'string' },
+    { name: 'description', type: 'text' },
+    { name: 'logo', type: 'image' },
+    { name: 'contactEmail', type: 'string' },
+    { name: 'contactPhone', type: 'string' },
+    { name: 'address', type: 'text' },
+    { name: 'socialLinks', type: 'object with URLs' },
+    { name: 'footerText', type: 'string' }
+  ]
+}
+```
+
+---
+
+## 🖼️ IMAGE REQUIREMENTS & PLACEMENTS
+
+### Critical Images Needed:
+
+#### Homepage:
+- ❌ **Hero**: Optional background (office/team photo)
+- ❌ **Features**: Optional service illustrations
+- ✅ **Testimonials**: 3 avatar images (placeholder acceptable)
+
+#### About Page:
+- ❌ All icon-based (no images required)
+- ✅ **Optional**: Founder photo, team photo
+
+#### Services Page:
+- ✅ **AI Software**: Neural network/code visualization (800x600px)
+- ✅ **Drone Technology**: Agricultural drone in field (800x600px)
+- ✅ **LMS**: Students/platform screenshot (800x600px)
+- ✅ **Training**: Workshop/classroom photo (800x600px)
+
+#### Training Page:
+- ✅ **Farmer Program**: Farmers with drones (800x600px)
+- ✅ **School Workshop**: Students in classroom (800x600px)
+- ✅ **Professional**: Training session (800x600px)
+
+#### Blog Page:
+- ✅ **Each Post**: Featured image (1200x630px) - 6 total
+  - AI + Agriculture theme
+  - Drone technology
+  - Manufacturing/innovation
+  - Enterprise/office
+  - Cloud/security
+  - Education/students
+
+#### Contact & Careers:
+- ❌ Optional only
+
+### Image Optimization:
+- Format: WebP (with JPEG fallback)
+- Use Next.js `<Image>` component
+- Lazy loading enabled
+- Responsive srcset
+
+### Image Sources (Suggestions):
+- Unsplash (free, commercial use)
+- Pexels (free)
+- Custom photography (recommended for authenticity)
+- Sanity's image CDN for CMS images
+
+---
+
+## ⚡ KEY FEATURES & FUNCTIONALITY
+
+### 1. Animations
+- **Fade-up on scroll** for sections
+- **Counter animation** for stats (homepage hero)
+- **Hover effects**: Shadow + translate for cards
+- **Button hover**: Color change + shadow effect (neumorphic)
+
+### 2. Forms
+- **Contact Form**:
+  - Client-side validation (zod)
+  - Success/error states
+  - Email integration (optional: Resend, SendGrid, or Next.js API route)
+- **Newsletter** (optional in footer)
+
+### 3. SEO
+- Metadata in each page
+- Open Graph tags
+- Structured data (JSON-LD)
+- Sitemap generation
+- robots.txt
+
+### 4. Performance
+- Image optimization (Next.js Image)
+- Font optimization
+- Code splitting
+- Lazy loading
+
+### 5. Accessibility
+- Semantic HTML
+- ARIA labels
+- Keyboard navigation
+- Alt text for images
+- Color contrast (WCAG AA)
+
+---
+
+## 📱 RESPONSIVE BREAKPOINTS
+
+```css
+sm: 640px   // Mobile landscape
+md: 768px   // Tablet
+lg: 1024px  // Desktop
+xl: 1280px  // Large desktop
+```
+
+### Mobile Considerations:
+- Hamburger menu (navbar)
+- Stacked layouts (1 column)
+- Touch-friendly buttons (min 44x44px)
+- Simplified animations
+
+---
+
+## 🚀 DEPLOYMENT CHECKLIST
+
+### Environment Variables
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2024-01-01
+SANITY_API_TOKEN= (for write access)
+```
+
+### Vercel Deployment Steps:
+1. Push code to GitHub
+2. Import project in Vercel
+3. Add environment variables
+4. Deploy
+5. Configure custom domain (optional)
+
+### Sanity Studio Access:
+- URL: `yourdomain.com/studio`
+- Authentication: Sanity accounts
+
+---
+
+## 📋 CONTENT CHECKLIST
+
+### Required Content:
+- ✅ Company description
+- ✅ Service descriptions (4 services)
+- ✅ Training program details (3 programs)
+- ✅ Testimonials (3 minimum)
+- ✅ Blog posts (6 sample posts)
+- ✅ Job listings (6 positions)
+- ✅ Contact information
+- ✅ About page content (mission, vision, values, timeline)
+
+### Optional Content:
+- Case studies/projects
+- Team member profiles
+- FAQ sections
+- Documentation/resources
+
+---
+
+## 🎯 ACCEPTANCE CRITERIA
+
+### Functionality:
+- ✅ All pages render correctly
+- ✅ Navigation works (desktop + mobile)
+- ✅ Forms submit successfully
+- ✅ Sanity Studio accessible at `/studio`
+- ✅ Content editable via CMS
+- ✅ Images load optimized
+- ✅ Responsive on all devices
+
+### Design:
+- ✅ Matches color palette
+- ✅ Professional, clean aesthetic
+- ✅ Consistent spacing/typography
+- ✅ Hover effects work
+- ✅ Animations smooth
+
+### Performance:
+- ✅ Lighthouse score > 90
+- ✅ First Contentful Paint < 2s
+- ✅ Time to Interactive < 3s
+
+### SEO:
+- ✅ Meta tags present
+- ✅ Sitemap generated
+- ✅ robots.txt configured
+
+---
+
+## 🛠️ DEVELOPMENT COMMANDS
+
+```bash
+# Install dependencies
+pnpm install
+
+# Run development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
+
+# Run linter
+pnpm lint
+
+# Access Sanity Studio
+# Navigate to: http://localhost:3000/studio
+```
+
+---
+
+## 📚 REFERENCE LINKS
+
+- **Next.js Docs**: https://nextjs.org/docs
+- **Sanity Docs**: https://www.sanity.io/docs
+- **shadcn/ui**: https://ui.shadcn.com
+- **Tailwind CSS**: https://tailwindcss.com/docs
+- **Lucide Icons**: https://lucide.dev
+
+---
+
+## 🎨 BUTTON STYLES (Neumorphic Effect)
+
+```css
+/* Primary CTA Button */
+.btn-primary {
+  @apply bg-gray-900 text-white cursor-pointer border border-gray-900 
+         rounded px-8 py-3 transition-all duration-200
+         hover:bg-green-400 hover:text-gray-900 
+         hover:translate-x-[-0.25rem] hover:translate-y-[-0.25rem] 
+         hover:shadow-[0.25rem_0.25rem_0_0_rgb(17,24,39)]
+         active:translate-x-0 active:translate-y-0 active:shadow-none;
+}
+```
+
+---
+
+## ✅ FINAL NOTES
+
+This website is designed to be:
+- **Professional**: Clean, corporate-appropriate design
+- **Functional**: All features work end-to-end
+- **Scalable**: Easy to add more content via Sanity CMS
+- **Performant**: Optimized images, code-splitting, lazy loading
+- **Accessible**: WCAG compliant, keyboard navigable
+- **SEO-friendly**: Proper meta tags, structured data
+
+**Unique Selling Points:**
+- Make in India initiative (drone manufacturing)
+- Founder-led (Karthika Venkatesan)
+- Focus on community impact (farmer training, school workshops)
+- AI-first approach to solutions
+
+---
+
+**END OF BUILD PROMPT**
+
+Use this document to build the Karvensen website from scratch. Every section, component, color, content piece, and image placement is specified above. Copy this prompt and provide it to any developer, AI tool, or use it as a reference for building the exact website structure.

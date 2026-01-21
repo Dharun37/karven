@@ -1,6 +1,6 @@
 # 🎉 Karvensen Website - Complete & Ready!
 
-## ✅ Project Status: COMPLETE
+## ✅ Project Status: COMPLETE-
 
 Your professional IT company website for **Karvensen** is now fully built and ready to launch!
 
