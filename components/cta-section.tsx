@@ -1,12 +1,13 @@
 "use client"
 
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, MessageSquare } from "lucide-react"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import { ConsultationForm } from "@/components/consultation-form"
 
 export function CTASection() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [isFormOpen, setIsFormOpen] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
@@ -87,24 +88,21 @@ export function CTASection() {
           Let's discuss how our AI-driven solutions and drone technology can transform your operations. 
           Join the future of intelligent automation.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button asChild size="lg" className="bg-white text-gray-900 hover:bg-gray-100 group">
-            <Link href="/contact">
-              <MessageSquare className="mr-2 h-4 w-4" />
-              Schedule a Consultation
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-all"
+        <div className="flex items-center justify-center">
+          <Button 
+            onClick={() => setIsFormOpen(true)}
+            size="lg" 
+            className="bg-white text-gray-900 hover:bg-gray-100 group"
           >
-            <Link href="/services">Explore Services</Link>
+            <MessageSquare className="mr-2 h-4 w-4" />
+            Schedule a Consultation
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
       </div>
+
+      {/* Consultation Form Modal */}
+      <ConsultationForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </section>
   )
 }

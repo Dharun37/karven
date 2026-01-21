@@ -1,74 +1,145 @@
 "use client"
 
-import Link from "next/link"
-import { Zap, Shield, Users } from "lucide-react"
+import { useState } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
 
-const features = [
+const images = [
   {
-    icon: Zap,
-    title: "AI-Powered Solutions",
-    description: "Cutting-edge AI and machine learning that solve real-world problems",
+    src: "/drone-flying-over-farm-field-at-sunset.jpg",
+    alt: "Drone flying over farm field at sunset"
   },
   {
-    icon: Shield,
-    title: "Make in India Quality",
-    description: "Indigenous drone manufacturing with global standards",
+    src: "/precision-agriculture-drone-mapping.jpg",
+    alt: "Precision agriculture drone mapping"
   },
   {
-    icon: Users,
-    title: "End-to-End Support",
-    description: "From development to deployment and training programs",
+    src: "/edu drone.png",
+    alt: "Educational drone"
   },
 ]
 
 export function FeaturesSection() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const handlePrevious = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    )
+  }
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    )
+  }
+
   return (
     <section className="bg-white border-b border-gray-200 py-20 relative overflow-hidden">
+      {/* Solid color background for bottom half only */}
+      <div className="absolute top-1/2 left-0 right-0 bottom-0 bg-[#050d19] -z-0" />
+      
       <div className="absolute inset-0 opacity-5" style={{
         backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)',
         backgroundSize: '24px 24px'
       }} />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex items-center justify-between mb-16 gap-8">
-          <div className="flex-1">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 animate-slide-in-left">
-              Built in India.
-              <br />
-              <span className="text-gray-600">Powered by Innovation.</span>
-            </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
+            Built in India.
+            <br />
+            <span className="text-gray-600">Powered by Innovation.</span>
+          </h2>
+        </div>
+
+        <div className="relative max-w-4xl mx-auto mb-16">
+          {/* Image Container */}
+          <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-100">
+            <Image
+              src={images[currentIndex].src}
+              alt={images[currentIndex].alt}
+              fill
+              className="object-cover transition-opacity duration-500"
+              priority
+            />
           </div>
 
-          <div className="flex-shrink-0">
-            <Link href="/about">
-              <div className="group inline-flex items-center gap-2 text-gray-900 hover:text-blue-600 transition-all">
-                <span className="text-base font-medium animate-slide-in-right">Learn about us</span>
-                <svg 
-                  className="w-5 h-5 transform group-hover:translate-x-1 transition-transform animate-slide-in-right" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </Link>
+          {/* Navigation Buttons */}
+          <button
+            onClick={handlePrevious}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-6 h-6 text-gray-900" />
+          </button>
+          
+          <button
+            onClick={handleNext}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-6 h-6 text-gray-900" />
+          </button>
+
+          {/* Indicator Dots */}
+          <div className="flex justify-center gap-2 mt-6">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex ? 'w-8 bg-blue-600' : 'w-2 bg-gray-300'
+                }`}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
 
-        <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
-          {features.map((feature, index) => (
-            <div 
-              key={feature.title}
-              className="group p-6 rounded-xl border border-gray-200 bg-white hover:shadow-lg transition-all duration-300"
-            >
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50">
-                <feature.icon className="h-6 w-6 text-blue-600" />
+        {/* Content in the dark background section */}
+        <div className="max-w-5xl mx-auto py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 md:divide-x divide-gray-700">
+            {/* Drone Stats Column */}
+            <div className="space-y-8 px-6">
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
+                  50,000+
+                </div>
+                <div className="text-sm sm:text-base text-gray-300">
+                  Acres Scanned & Analyzed
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
+                  5TB+
+                </div>
+                <div className="text-sm sm:text-base text-gray-300">
+                  Aerial Data Processed
+                </div>
+              </div>
             </div>
-          ))}
+
+            {/* AI Stats Column */}
+            <div className="space-y-8 px-6">
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
+                  98%
+                </div>
+                <div className="text-sm sm:text-base text-gray-300">
+                  Accuracy in Defect Detection
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
+                  500+
+                </div>
+                <div className="text-sm sm:text-base text-gray-300">
+                  AI Models Deployed
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

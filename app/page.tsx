@@ -1,7 +1,6 @@
 import { HeroSection } from "@/components/hero-section"
 import { FeaturesSection } from "@/components/features-section"
-import { ServicesCards } from "@/components/services-cards"
-import { StatsBoxes } from "@/components/stats-boxes"
+import { HowWeWorkSection } from "@/components/how-we-work-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { CTASection } from "@/components/cta-section"
 
@@ -10,8 +9,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <FeaturesSection />
-      <ServicesCards />
-      <StatsBoxes />
+      <HowWeWorkSection />
       <TestimonialsSection />
       <CTASection />
     </>
