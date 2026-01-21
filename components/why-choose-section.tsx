@@ -37,14 +37,14 @@ const highlights = [
 
 export function WhyChooseSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gray-50 border-b border-gray-200">
+    <section className="min-h-screen flex items-center justify-center bg-gray-900 border-b border-gray-800 text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-6">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
               Why Choose Karvensen?
             </h2>
-            <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
               We're not just another IT company. Karvensen combines cutting-edge AI technology with a deep understanding 
               of real-world challenges - from helping farmers optimize crops with drones to building enterprise systems 
               that scale.
@@ -53,8 +53,8 @@ export function WhyChooseSection() {
             <div className="space-y-3 mb-8">
               {highlights.map((highlight) => (
                 <div key={highlight} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-gray-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-600">{highlight}</span>
+                  <CheckCircle2 className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">{highlight}</span>
                 </div>
               ))}
             </div>
@@ -62,13 +62,13 @@ export function WhyChooseSection() {
 
           <div className="grid sm:grid-cols-2 gap-6">
             {values.map((value, index) => (
-              <Card key={value.title} className="border-2 border-gray-200 hover:border-gray-400 transition-colors bg-white">
+              <Card key={value.title} className="border-2 border-gray-700 hover:border-green-400 transition-all bg-gray-800 hover:bg-gray-750 hover:-translate-y-1">
                 <CardContent className="pt-6">
-                  <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100">
+                  <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-green-400">
                     <value.icon className="h-5 w-5 text-gray-900" />
                   </div>
-                  <h3 className="font-semibold mb-2 text-lg text-gray-900">{value.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <h3 className="font-semibold mb-2 text-lg text-white">{value.title}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">
                     {value.description}
                   </p>
                 </CardContent>

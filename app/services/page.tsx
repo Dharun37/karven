@@ -103,50 +103,48 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="space-y-16">
-            {services.map((service, index) => (
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+            {services.map((service) => (
               <div key={service.id} id={service.id} className="scroll-mt-20">
-                <div className="overflow-hidden border border-gray-200 rounded-lg hover:border-gray-400 hover:shadow-lg transition-all">
-                  <div className="grid md:grid-cols-2">
-                    <div className="p-8 md:p-12 bg-gray-50">
-                      <div className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gray-700">
-                        <service.icon className="h-7 w-7 text-white" />
+                <div className="h-full flex flex-col overflow-hidden border border-gray-200 rounded-lg hover:border-gray-400 hover:shadow-lg transition-all">
+                  <div className="p-6 lg:p-8 bg-gray-50 border-b border-gray-200">
+                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gray-700">
+                      <service.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <div className="mb-3 inline-block px-3 py-1 bg-gray-200 text-gray-900 text-xs font-medium rounded-full">
+                      {service.tagline}
+                    </div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{service.description}</p>
+                    <Button asChild size="sm" className="group bg-gray-700 hover:bg-gray-800 text-white">
+                      <Link href="/contact">
+                        Get Started
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
+                  </div>
+
+                  <div className="p-6 lg:p-8 bg-white flex-1">
+                    <div className="mb-6">
+                      <h3 className="font-semibold text-base text-gray-900 mb-3">Key Features</h3>
+                      <div className="space-y-2">
+                        {service.features.map((feature) => (
+                          <div key={feature} className="flex items-start gap-2">
+                            <CheckCircle2 className="h-4 w-4 text-gray-700 mt-0.5 flex-shrink-0" />
+                            <span className="text-xs text-gray-600">{feature}</span>
+                          </div>
+                        ))}
                       </div>
-                      <div className="mb-4 inline-block px-3 py-1 bg-gray-200 text-gray-900 text-sm font-medium rounded-full">
-                        {service.tagline}
-                      </div>
-                      <h2 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h2>
-                      <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
-                      <Button asChild className="group bg-gray-700 hover:bg-gray-800 text-white">
-                        <Link href="/contact">
-                          Get Started
-                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                      </Button>
                     </div>
 
-                    <div className="p-8 md:p-12 bg-white">
-                      <div className="mb-8">
-                        <h3 className="font-semibold text-lg text-gray-900 mb-4">Key Features</h3>
-                        <div className="space-y-3">
-                          {service.features.map((feature) => (
-                            <div key={feature} className="flex items-start gap-3">
-                              <CheckCircle2 className="h-5 w-5 text-gray-700 mt-0.5 flex-shrink-0" />
-                              <span className="text-sm text-gray-600">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <h3 className="font-semibold text-lg text-gray-900 mb-3">Use Cases</h3>
-                        <div className="flex flex-wrap gap-2">
-                          {service.applications.map((app) => (
-                            <span key={app} className="px-3 py-1 bg-gray-100 border border-gray-300 text-gray-700 text-sm rounded-md">
-                              {app}
-                            </span>
-                          ))}
-                        </div>
+                    <div>
+                      <h3 className="font-semibold text-base text-gray-900 mb-3">Use Cases</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {service.applications.map((app) => (
+                          <span key={app} className="px-2 py-1 bg-gray-100 border border-gray-300 text-gray-700 text-xs rounded-md">
+                            {app}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>
