@@ -45,7 +45,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
+    <footer className="bg-white">
       <div className="container mx-auto px-4 py-16">
         <div className="grid gap-12 md:grid-cols-3 lg:grid-cols-5">
           {/* Products & Services */}
@@ -139,7 +139,7 @@ export function Footer() {
         </div>
 
         {/* Social Media Icons - Centered */}
-        <div className="flex items-center justify-center gap-4 mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+        <div className="flex items-center justify-center gap-4 mt-12 pt-8">
           <a href="#" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors" aria-label="Twitter">
             <Twitter className="h-5 w-5" />
           </a>
@@ -158,7 +158,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Links - Group Companies, Legal, Policies */}
-        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
+        <div className="mt-8 pt-8">
           <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-xs text-gray-600 dark:text-gray-400">
             <span className="font-medium text-gray-900 dark:text-white">Group Companies:</span>
             <Link href="https://droneentry.com" className="hover:text-gray-900 dark:hover:text-white transition-colors">

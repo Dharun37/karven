@@ -720,25 +720,6 @@ export default function TrainingPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gray-700 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Ready to Empower Your Community?</h2>
-          <p className="text-white/80 max-w-2xl mx-auto text-lg mb-8">
-            Partner with us to bring AI and drone awareness programs to your organization, school, or community
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center px-6 py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors font-medium">
-              Get in Touch
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-            <Link href="/about" className="inline-flex items-center px-6 py-3 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-colors font-medium bg-transparent">
-              About KarVenSen
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
