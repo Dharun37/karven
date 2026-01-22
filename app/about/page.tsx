@@ -182,7 +182,7 @@ export default function AboutPage() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-16">
       {/* Fixed Send Message Button - Bottom Right */}
       <button
         onClick={() => setIsContactFormOpen(true)}
