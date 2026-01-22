@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
@@ -71,6 +71,11 @@ const training = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white backdrop-blur-sm">
@@ -145,14 +150,15 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           {/* Mobile Navigation */}
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon" className="text-gray-900">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] sm:w-[350px] bg-white p-6">            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>              <nav className="flex flex-col gap-6 mt-12">
+          {mounted && (
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild className="lg:hidden">
+                <Button variant="ghost" size="icon" className="text-gray-900">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[280px] sm:w-[350px] bg-white p-6">            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>              <nav className="flex flex-col gap-6 mt-12">
                 <Link
                   href="/"
                   onClick={() => setOpen(false)}
@@ -205,6 +211,7 @@ export function Navbar() {
               </nav>
             </SheetContent>
           </Sheet>
+          )}
         </div>
       </div>
     </header>
