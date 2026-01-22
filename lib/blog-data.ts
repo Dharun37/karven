@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-15",
     readTime: "6 min read",
     author: "Karvensen Team",
-    heroImage: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=900&h=600&fit=crop&auto=format",
+    heroImage: "/blog-img1.jpg",
   },
   {
     id: "ai-healthcare-detection",
@@ -41,7 +41,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-12",
     readTime: "7 min read",
     author: "Karvensen Team",
-    heroImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&h=600&fit=crop&auto=format",
+    heroImage: "/blog-img2.jpg",
   },
   {
     id: "computer-vision-applications",
@@ -52,7 +52,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-08",
     readTime: "8 min read",
     author: "Karvensen Team",
-    heroImage: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=900&h=600&fit=crop&auto=format",
+    heroImage: "/blog-img3.jpg",
   },
   {
     id: "generative-ai-future",
@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-05",
     readTime: "6 min read",
     author: "Karvensen Team",
-    heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&h=600&fit=crop&auto=format",
+    heroImage: "/blog-img4.jpg",
   },
   {
     id: "ai-model-training",
@@ -175,7 +175,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-06",
     readTime: "6 min read",
     author: "Karvensen Team",
-    heroImage: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=900&h=600&fit=crop&auto=format",
+    heroImage: "/blog-img14.jpg",
   },
   {
     id: "make-in-india-drones",
@@ -219,7 +219,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-12-20",
     readTime: "9 min read",
     author: "Karvensen Team",
-    heroImage: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=900&h=600&fit=crop&auto=format",
+    heroImage: "/blog-img18.jpg",
   },
   {
     id: "ai-powered-drones",
@@ -230,7 +230,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-12-15",
     readTime: "7 min read",
     author: "Karvensen Team",
-    heroImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&h=600&fit=crop&auto=format",
+    heroImage: "/blog-img19.jpg",
   },
   {
     id: "defense-drones",
@@ -241,7 +241,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-12-10",
     readTime: "6 min read",
     author: "Karvensen Team",
-    heroImage: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900&h=600&fit=crop&auto=format",
+    heroImage: "/blog-img20.jpg",
   },
   {
     id: "delivery-drones-logistics",
