@@ -107,16 +107,6 @@ export default function TrainingPage() {
   const mediaItems = [
     {
       type: 'image',
-      src: '/drone-flying-over-farm-field-at-sunset.jpg',
-      caption: 'Setting the Benchmark as India\'s First Make-in-India Drone Company with Dual DGCA Certifications'
-    },
-    {
-      type: 'image',
-      src: '/precision-agriculture-drone-mapping.jpg',
-      caption: 'Hands-on Training Sessions with Agricultural Drones'
-    },
-    {
-      type: 'image',
       src: '/edu drone.png',
       caption: 'Educational Workshops for Students'
     },
@@ -126,6 +116,13 @@ export default function TrainingPage() {
       caption: 'Live Drone Demonstration'
     },
   ]
+
+  // Ensure currentSlide is within bounds
+  useEffect(() => {
+    if (currentSlide >= mediaItems.length) {
+      setCurrentSlide(0)
+    }
+  }, [currentSlide])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % mediaItems.length)
@@ -168,7 +165,7 @@ export default function TrainingPage() {
         {/* Background Image */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/drone-flying-over-farm-field-at-sunset.jpg')" }}
+          style={{ backgroundImage: "url('/training-drone.png')" }}
         />
         
         {/* Dark Overlay */}
@@ -262,7 +259,7 @@ export default function TrainingPage() {
             <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src="/training-image.png"
+                  src="/train-1.jpeg"
                   alt="Small Class Drone Pilot Training"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
@@ -280,7 +277,7 @@ export default function TrainingPage() {
                     <span className="font-semibold">Duration:</span> 8 Days
                   </p>
                   <Link 
-                    href="/contact"
+                    href="/training/courses/course-a"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors"
                   >
                     Learn More
@@ -293,7 +290,7 @@ export default function TrainingPage() {
             <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src="/training-image2.png"
+                  src="/train-2.jpeg"
                   alt="Small and Medium Class Drone Training"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
@@ -311,7 +308,7 @@ export default function TrainingPage() {
                     <span className="font-semibold">Duration:</span> 13 days
                   </p>
                   <Link 
-                    href="/contact"
+                    href="/training/courses/course-b"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors"
                   >
                     Learn More
@@ -324,7 +321,7 @@ export default function TrainingPage() {
             <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src="/edu%20drone.png"
+                  src="/edu drone.png"
                   alt="Educational Drone Workshop"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
@@ -342,7 +339,7 @@ export default function TrainingPage() {
                     <span className="font-semibold">Duration:</span> 3-5 Days
                   </p>
                   <Link 
-                    href="/contact"
+                    href="/training/courses/course-c"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors"
                   >
                     Learn More
@@ -355,7 +352,7 @@ export default function TrainingPage() {
             <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src="/dron%20in%20agri%20land.png"
+                  src="/dron in agri land.png"
                   alt="Agricultural Drone Training"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
@@ -373,7 +370,7 @@ export default function TrainingPage() {
                     <span className="font-semibold">Duration:</span> 6 Days
                   </p>
                   <Link 
-                    href="/contact"
+                    href="/training/courses/course-d"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors"
                   >
                     Learn More
@@ -386,16 +383,19 @@ export default function TrainingPage() {
       </section>
 
       {/* Trusted Partners Section */}
-      <section className="py-20 bg-white border-t border-b border-gray-200 overflow-hidden">
+      <section className="py-20 bg-white border-t border-b border-gray-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Trusted by Leading Organizations</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Our training programs are recognized and trusted by top companies and institutions across India</p>
           </div>
-          
+        </div>
+        
+        {/* Full-width dark background container for logos */}
+        <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 py-12 overflow-hidden">
           <div 
             ref={scrollRef}
-            className="flex gap-16 overflow-x-hidden py-8"
+            className="flex gap-16 overflow-x-hidden"
             style={{ scrollBehavior: 'auto' }}
           >
             {/* First set of logos */}
@@ -413,9 +413,9 @@ export default function TrainingPage() {
             ].map((partner, index) => (
               <div
                 key={`partner-1-${index}`}
-                className="flex-shrink-0 w-48 h-24 bg-gray-50 rounded-xl border-2 border-gray-200 p-6 flex items-center justify-center hover:border-blue-500 hover:shadow-lg transition-all duration-300"
+                className="flex-shrink-0 w-48 h-24 bg-white rounded-xl border-2 border-gray-200 p-6 flex items-center justify-center hover:border-blue-400 hover:shadow-xl transition-all duration-300"
               >
-                <span className="text-gray-700 font-bold text-lg">{partner.name}</span>
+                <span className="text-gray-800 font-bold text-lg">{partner.name}</span>
               </div>
             ))}
             
@@ -434,9 +434,9 @@ export default function TrainingPage() {
             ].map((partner, index) => (
               <div
                 key={`partner-2-${index}`}
-                className="flex-shrink-0 w-48 h-24 bg-gray-50 rounded-xl border-2 border-gray-200 p-6 flex items-center justify-center hover:border-blue-500 hover:shadow-lg transition-all duration-300"
+                className="flex-shrink-0 w-48 h-24 bg-white rounded-xl border-2 border-gray-200 p-6 flex items-center justify-center hover:border-blue-400 hover:shadow-xl transition-all duration-300"
               >
-                <span className="text-gray-700 font-bold text-lg">{partner.name}</span>
+                <span className="text-gray-800 font-bold text-lg">{partner.name}</span>
               </div>
             ))}
           </div>
@@ -504,7 +504,7 @@ export default function TrainingPage() {
               
               <div className="relative pl-6">
                 <img
-                  src="/training-image2.png"
+                  src="/train-2.jpeg"
                   alt="Training with KarVenSen"
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -515,7 +515,7 @@ export default function TrainingPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative pr-6">
                 <img
-                  src="/training-image.png"
+                  src="/train-1.jpeg"
                   alt="What sets us apart"
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -633,7 +633,7 @@ export default function TrainingPage() {
             {/* Right Side - Image */}
             <div className="relative">
               <img
-                src="/boy%20with%20drone.png"
+                src="/train-3.jpeg"
                 alt="Career opportunities in drone technology"
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />

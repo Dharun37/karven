@@ -1,26 +1,41 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 
 const images = [
   {
-    src: "/drone-flying-over-farm-field-at-sunset.jpg",
-    alt: "Drone flying over farm field at sunset"
-  },
-  {
-    src: "/precision-agriculture-drone-mapping.jpg",
-    alt: "Precision agriculture drone mapping"
-  },
-  {
     src: "/edu drone.png",
     alt: "Educational drone"
+  },
+  {
+    src: "/train-1.jpeg",
+    alt: "Training program 1"
+  },
+  {
+    src: "/train-2.jpeg",
+    alt: "Training program 2"
+  },
+  {
+    src: "/train-3.jpeg",
+    alt: "Training program 3"
   },
 ]
 
 export function FeaturesSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
+
+  // Auto-play slideshow every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      )
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) => 
